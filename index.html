@@ -1,7 +1,415 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SportsBook - Advanced Player Search</title>
+  <style>
+    :root {
+      /* Replace this with your logo’s actual blue shade if needed */
+      --accent-color: #1B75BC;
+      --bg-color: #0f0f0f;
+      --dark-grey: #1c1c1c;
+      --medium-grey: #2a2a2a;
+      --light-grey: #cccccc;
+      --white: #ffffff;
+    }
+    
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg-color);
+      color: var(--white);
+    }
+    a {
+      text-decoration: none;
+    }
+
+    /* HEADER */
+    header {
+      background-color: var(--dark-grey);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--accent-color);
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+    .header-left img {
+      height: 50px;
+      margin-right: 10px;
+    }
+    .header-left h1 {
+      font-size: 1.8rem;
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+    .header-right nav a {
+      margin-left: 20px;
+      color: var(--light-grey);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .header-right nav a:hover {
+      color: var(--white);
+    }
+
+    /* MAIN CONTAINER */
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* SEARCH & FILTER SECTION */
+    .search-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .search-container input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid var(--accent-color);
+      border-radius: 4px;
+      background-color: var(--dark-grey);
+      color: var(--white);
+    }
+    .search-container input[type="text"]::placeholder {
+      color: var(--light-grey);
+    }
+    .filters {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .filters select {
+      padding: 8px;
+      border: 1px solid var(--accent-color);
+      border-radius: 4px;
+      background-color: var(--dark-grey);
+      color: var(--white);
+      font-size: 0.9rem;
+    }
+
+    /* TABS */
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--accent-color);
+    }
+    .tabs button {
+      flex: 1;
+      padding: 12px 0;
+      background: transparent;
+      border: none;
+      color: var(--light-grey);
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+    .tabs button.active,
+    .tabs button:hover {
+      background: var(--accent-color);
+      color: var(--bg-color);
+    }
+
+    /* RESULTS GRID */
+    .results {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    /* PLAYER CARD */
+    .player-card {
+      background: var(--dark-grey);
+      padding: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      border: 1px solid var(--accent-color);
+    }
+    .player-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.7);
+    }
+    .player-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      border: 1px solid var(--accent-color);
+    }
+    .player-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+      color: var(--white);
+    }
+    .player-card p {
+      font-size: 0.9rem;
+      color: var(--light-grey);
+      margin-bottom: 4px;
+    }
+
+    /* SHOW MORE BUTTON */
+    .show-more-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .show-more-btn {
+      padding: 10px 20px;
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .show-more-btn:hover {
+      background-color: #0f5da1;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: var(--dark-grey);
+      border-top: 1px solid var(--accent-color);
+      padding: 20px;
+      color: var(--light-grey);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .footer-section h3 {
+      color: var(--white);
+      margin-bottom: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .footer-section ul {
+      list-style: none;
+    }
+    .footer-section ul li {
+      margin-bottom: 6px;
+    }
+    .footer-section ul li a {
+      color: var(--light-grey);
+      transition: color 0.3s;
+    }
+    .footer-section ul li a:hover {
+      color: var(--white);
+    }
+    .footer-note {
+      text-align: center;
+      width: 100%;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: var(--light-grey);
+    }
+  </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <!-- Using the provided logo link -->
+      <img src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true" alt="SportsBook Logo" />
+    </div>
+    <div class="header-right">
+      <nav>
+        <a href="#">Sports</a>
+        <a href="#">Live Scoring</a>
+        <a href="#">Core Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-container">
+    <!-- Search and Filters -->
+    <section class="search-container">
+      <input type="text" id="searchInput" placeholder="Search players by name, skill, etc." />
+      <div class="filters">
+        <select id="sportFilter">
+          <option value="">All Sports</option>
+          <option value="football">Football</option>
+          <option value="basketball">Basketball</option>
+          <option value="volleyball">Volleyball</option>
+        </select>
+        <select id="skillFilter">
+          <option value="">All Levels</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-button active" data-tab="matchmaking">Matchmaking</button>
+      <button class="tab-button" data-tab="teammaking">Team Making</button>
+    </div>
+
+    <!-- Results Section -->
+    <section class="results" id="resultsContainer">
+      <!-- Dynamically filled player cards -->
+    </section>
+
+    <!-- Show More Button -->
+    <div class="show-more-container" id="showMoreContainer" style="display: none;">
+      <button class="show-more-btn" id="showMoreBtn">Show More</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-section">
+      <h3>Platform</h3>
+      <ul>
+        <li><a href="#">Scan</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Leaderboard</a></li>
+        <li><a href="#">Live Scoring</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Features</h3>
+      <ul>
+        <li><a href="#">Occupancy</a></li>
+        <li><a href="#">Player Search</a></li>
+        <li><a href="#">Booking</a></li>
+        <li><a href="#">Others</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-note">
+      © 2025 SportsBook. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // 15 sample players
+    const players = [
+      { id: 1,  name: "Alice",    sport: "football",   skill: "advanced",    image: "https://via.placeholder.com/220x150?text=Alice" },
+      { id: 2,  name: "Bob",      sport: "basketball", skill: "intermediate",image: "https://via.placeholder.com/220x150?text=Bob" },
+      { id: 3,  name: "Charlie",  sport: "volleyball", skill: "beginner",    image: "https://via.placeholder.com/220x150?text=Charlie" },
+      { id: 4,  name: "Diana",    sport: "football",   skill: "beginner",    image: "https://via.placeholder.com/220x150?text=Diana" },
+      { id: 5,  name: "Ethan",    sport: "basketball", skill: "advanced",    image: "https://via.placeholder.com/220x150?text=Ethan" },
+      { id: 6,  name: "Fiona",    sport: "volleyball", skill: "intermediate",image: "https://via.placeholder.com/220x150?text=Fiona" },
+      { id: 7,  name: "George",   sport: "football",   skill: "intermediate",image: "https://via.placeholder.com/220x150?text=George" },
+      { id: 8,  name: "Hannah",   sport: "basketball", skill: "beginner",    image: "https://via.placeholder.com/220x150?text=Hannah" },
+      { id: 9,  name: "Ivan",     sport: "volleyball", skill: "advanced",    image: "https://via.placeholder.com/220x150?text=Ivan" },
+      { id: 10, name: "Julia",    sport: "football",   skill: "advanced",    image: "https://via.placeholder.com/220x150?text=Julia" },
+      { id: 11, name: "Kevin",    sport: "basketball", skill: "intermediate",image: "https://via.placeholder.com/220x150?text=Kevin" },
+      { id: 12, name: "Laura",    sport: "volleyball", skill: "beginner",    image: "https://via.placeholder.com/220x150?text=Laura" },
+      { id: 13, name: "Mike",     sport: "football",   skill: "beginner",    image: "https://via.placeholder.com/220x150?text=Mike" },
+      { id: 14, name: "Nina",     sport: "basketball", skill: "advanced",    image: "https://via.placeholder.com/220x150?text=Nina" },
+      { id: 15, name: "Oscar",    sport: "volleyball", skill: "intermediate",image: "https://via.placeholder.com/220x150?text=Oscar" }
+    ];
+
+    let playersPerPage = 10;
+    let currentPlayers = [];
+
+    // Function to filter and display players
+    function displayPlayers() {
+      const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+      const sportFilter = document.getElementById('sportFilter').value;
+      const skillFilter = document.getElementById('skillFilter').value;
+      const resultsContainer = document.getElementById('resultsContainer');
+
+      currentPlayers = players.filter(player => {
+        const matchesName = player.name.toLowerCase().includes(searchQuery);
+        const matchesSport = sportFilter ? player.sport === sportFilter : true;
+        const matchesSkill = skillFilter ? player.skill === skillFilter : true;
+        return matchesName && matchesSport && matchesSkill;
+      });
+
+      renderPlayers();
+    }
+
+    // Render players up to the current limit
+    function renderPlayers() {
+      const resultsContainer = document.getElementById('resultsContainer');
+      resultsContainer.innerHTML = '';
+
+      const slicedPlayers = currentPlayers.slice(0, playersPerPage);
+
+      slicedPlayers.forEach(player => {
+        const card = document.createElement('div');
+        card.className = 'player-card';
+        card.innerHTML = `
+          <img src="${player.image}" alt="${player.name}" />
+          <h3>${player.name}</h3>
+          <p>Sport: ${player.sport}</p>
+          <p>Skill: ${player.skill}</p>
+        `;
+        card.addEventListener('click', () => {
+          alert('Clicked on ' + player.name + ' for more details or actions!');
+        });
+        resultsContainer.appendChild(card);
+      });
+
+      const showMoreContainer = document.getElementById('showMoreContainer');
+      if (currentPlayers.length > playersPerPage) {
+        showMoreContainer.style.display = 'block';
+      } else {
+        showMoreContainer.style.display = 'none';
+      }
+    }
+
+    function showMorePlayers() {
+      playersPerPage += 5;
+      renderPlayers();
+    }
+
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        displayPlayers();
+      });
+    });
+
+    document.getElementById('searchInput').addEventListener('input', displayPlayers);
+    document.getElementById('sportFilter').addEventListener('change', displayPlayers);
+    document.getElementById('skillFilter').addEventListener('change', displayPlayers);
+    document.getElementById('showMoreBtn').addEventListener('click', showMorePlayers);
+
+    displayPlayers();
+  </script>
 </body>
 </html>
