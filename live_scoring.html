@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Scoring - SportsBook</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="sportsBook_logo.png" alt="SportsBook Logo" class="logo">
+                <h1 class="logo-text">SportsBook</h1>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#" class="nav-link">Sports <i data-lucide="chevron-down"></i></a></li>
+                    <li class="nav-item"><a href="live_scoring.html" class="nav-link active">Live Scoring <i data-lucide="chevron-down"></i></a></li>
+                    <li class="nav-item"><a href="cointoss.html" class="nav-link">Coin Toss <i data-lucide="chevron-down"></i></a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#" class="btn btn-primary">Log in <i data-lucide="chevron-down"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Live Scoring</h1>
+                <p class="page-description">Track real-time scores and statistics for ongoing games</p>
+            </div>
+        </section>
+
+        <section class="live-games-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Ongoing Games</h2>
+                    <div class="filter-controls">
+                        <select class="select-control" id="sportFilter">
+                            <option value="all">All Sports</option>
+                            <option value="basketball">Basketball</option>
+                            <option value="football">Football</option>
+                            <option value="volleyball">Volleyball</option>
+                            <option value="tennis">Tennis</option>
+                        </select>
+                        <select class="select-control" id="venueFilter">
+                            <option value="all">All Venues</option>
+                            <option value="main-court">Main Court</option>
+                            <option value="field-1">Field 1</option>
+                            <option value="gym-a">Gym A</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="game-header">
+                            <span class="game-sport">Basketball</span>
+                            <span class="game-status live">LIVE</span>
+                        </div>
+                        <div class="game-teams">
+                            <div class="team team-home">
+                                <div class="team-logo">
+                                    <i data-lucide="shield"></i>
+                                </div>
+                                <div class="team-info">
+                                    <h3 class="team-name">Team Alpha</h3>
+                                    <span class="team-score">78</span>
+                                </div>
+                            </div>
+                            <div class="game-vs">VS</div>
+                            <div class="team team-away">
+                                <div class="team-logo">
+                                    <i data-lucide="shield"></i>
+                                </div>
+                                <div class="team-info">
+                                    <h3 class="team-name">Team Beta</h3>
+                                    <span class="team-score">72</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-details">
+                            <div class="game-time">
+                                <i data-lucide="clock"></i>
+                                <span>Q4 - 2:45</span>
+                            </div>
+                            <div class="game-location">
+                                <i data-lucide="map-pin"></i>
+                                <span>Main Court</span>
+                            </div>
+                        </div>
+                        <div class="game-actions">
+                            <button class="btn btn-sm btn-outline">View Details</button>
+                            <button class="btn btn-sm btn-primary">Watch Live</button>
+                        </div>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-header">
+                            <span class="game-sport">Football</span>
+                            <span class="game-status live">LIVE</span>
+                        </div>
+                        <div class="game-teams">
+                            <div class="team team-home">
+                                <div class="team-logo">
+                                    <i data-lucide="shield"></i>
+                                </div>
+                                <div class="team-info">
+                                    <h3 class="team-name">Eagles FC</h3>
+                                    <span class="team-score">2</span>
+                                </div>
+                            </div>
+                            <div class="game-vs">VS</div>
+                            <div class="team team-away">
+                                <div class="team-logo">
+                                    <i data-lucide="shield"></i>
+                                </div>
+                                <div class="team-info">
+                                    <h3 class="team-name">Lions United</h3>
+                                    <span class="team-score">1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-details">
+                            <div class="game-time">
+                                <i data-lucide="clock"></i>
+                                <span>75' - Second Half</span>
+                            </div>
+                            <div class="game-location">
+                                <i data-lucide="map-pin"></i>
+                                <span>Field 1</span>
+                            </div>
+                        </div>
+                        <div class="game-actions">
+                            <button class="btn btn-sm btn-outline">View Details</button>
+                            <button class="btn btn-sm btn-primary">Watch Live</button>
+                        </div>
+                    </div>
+
+                    <div class="game-card">
+                        <div class="game-header">
+                            <span class="game-sport">Volleyball</span>
+                            <span class="game-status live">LIVE</span>
+                        </div>
+                        <div class="game-teams">
+                            <div class="team team-home">
+                                <div class="team-logo">
+                                    <i data-lucide="shield"></i>
+                                </div>
+                                <div class="team-info">
+                                    <h3 class="team-name">Spikers</h3>
+                                    <span class="team-score">2</span>
+                                </div>
+                            </div>
+                            <div class="game-vs">VS</div>
+                            <div class="team team-away">
+                                <div class="team-logo">
+                                    <i data-lucide="shield"></i>
+                                </div>
+                                <div class="team-info">
+                                    <h3 class="team-name">Blockers</h3>
+                                    <span class="team-score">1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-details">
+                            <div class="game-time">
+                                <i data-lucide="clock"></i>
+                                <span>Set 3 - 18:15</span>
+                            </div>
+                            <div class="game-location">
+                                <i data-lucide="map-pin"></i>
+                                <span>Gym A</span>
+                            </div>
+                        </div>
+                        <div class="game-actions">
+                            <button class="btn btn-sm btn-outline">View Details</button>
+                            <button class="btn btn-sm btn-primary">Watch Live</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="upcoming-games-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Upcoming Games</h2>
+                    <a href="#" class="view-all-link">View All <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <div class="games-list">
+                    <div class="game-item">
+                        <div class="game-time-info">
+                            <div class="game-date">Today</div>
+                            <div class="game-time">18:30</div>
+                        </div>
+                        <div class="game-teams-info">
+                            <div class="team-name">Team Gamma</div>
+                            <div class="vs">vs</div>
+                            <div class="team-name">Team Delta</div>
+                        </div>
+                        <div class="game-meta">
+                            <div class="game-sport">Basketball</div>
+                            <div class="game-venue">Main Court</div>
+                        </div>
+                        <div class="game-action">
+                            <button class="btn btn-sm btn-outline">Set Reminder</button>
+                        </div>
+                    </div>
+
+                    <div class="game-item">
+                        <div class="game-time-info">
+                            <div class="game-date">Tomorrow</div>
+                            <div class="game-time">10:00</div>
+                        </div>
+                        <div class="game-teams-info">
+                            <div class="team-name">Hawks FC</div>
+                            <div class="vs">vs</div>
+                            <div class="team-name">Tigers United</div>
+                        </div>
+                        <div class="game-meta">
+                            <div class="game-sport">Football</div>
+                            <div class="game-venue">Field 2</div>
+                        </div>
+                        <div class="game-action">
+                            <button class="btn btn-sm btn-outline">Set Reminder</button>
+                        </div>
+                    </div>
+
+                    <div class="game-item">
+                        <div class="game-time-info">
+                            <div class="game-date">Tomorrow</div>
+                            <div class="game-time">14:15</div>
+                        </div>
+                        <div class="game-teams-info">
+                            <div class="team-name">Aces</div>
+                            <div class="vs">vs</div>
+                            <div class="team-name">Smashers</div>
+                        </div>
+                        <div class="game-meta">
+                            <div class="game-sport">Tennis</div>
+                            <div class="game-venue">Court 3</div>
+                        </div>
+                        <div class="game-action">
+                            <button class="btn btn-sm btn-outline">Set Reminder</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-results-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Recent Results</h2>
+                    <a href="#" class="view-all-link">View All <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <div class="results-list">
+                    <div class="result-item">
+                        <div class="result-date">Yesterday</div>
+                        <div class="result-teams">
+                            <div class="team">
+                                <span class="team-name">Team Omega</span>
+                                <span class="team-score win">92</span>
+                            </div>
+                            <div class="team">
+                                <span class="team-name">Team Sigma</span>
+                                <span class="team-score">85</span>
+                            </div>
+                        </div>
+                        <div class="result-meta">
+                            <span class="result-sport">Basketball</span>
+                            <span class="result-venue">Main Court</span>
+                        </div>
+                        <div class="result-action">
+                            <button class="btn btn-sm btn-outline">View Summary</button>
+                        </div>
+                    </div>
+
+                    <div class="result-item">
+                        <div class="result-date">Yesterday</div>
+                        <div class="result-teams">
+                            <div class="team">
+                                <span class="team-name">Falcons FC</span>
+                                <span class="team-score">1</span>
+                            </div>
+                            <div class="team">
+                                <span class="team-name">Panthers United</span>
+                                <span class="team-score win">3</span>
+                            </div>
+                        </div>
+                        <div class="result-meta">
+                            <span class="result-sport">Football</span>
+                            <span class="result-venue">Field 1</span>
+                        </div>
+                        <div class="result-action">
+                            <button class="btn btn-sm btn-outline">View Summary</button>
+                        </div>
+                    </div>
+
+                    <div class="result-item">
+                        <div class="result-date">2 days ago</div>
+                        <div class="result-teams">
+                            <div class="team">
+                                <span class="team-name">Strikers</span>
+                                <span class="team-score win">3</span>
+                            </div>
+                            <div class="team">
+                                <span class="team-name">Defenders</span>
+                                <span class="team-score">0</span>
+                            </div>
+                        </div>
+                        <div class="result-meta">
+                            <span class="result-sport">Volleyball</span>
+                            <span class="result-venue">Gym B</span>
+                        </div>
+                        <div class="result-action">
+                            <button class="btn btn-sm btn-outline">View Summary</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-title">Platform</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Scan</a></li>
+                        <li><a href="#">Sports</a></li>
+                        <li><a href="#">Leaderboard</a></li>
+                        <li><a href="#">Live Scoring</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Features</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Occupancy</a></li>
+                        <li><a href="#">Player Search</a></li>
+                        <li><a href="#">Booking</a></li>
+                        <li><a href="#">Others</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 SportsBook | Made with ❤️ by the SportsBook Team</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

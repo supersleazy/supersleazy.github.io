@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facility Occupancy - SportsBook</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="sportsBook_logo.png" alt="SportsBook Logo" class="logo">
+                <h1 class="logo-text">SportsBook</h1>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#" class="nav-link">Sports <i data-lucide="chevron-down"></i></a></li>
+                    <li class="nav-item"><a href="live_scoring.html" class="nav-link">Live Scoring <i data-lucide="chevron-down"></i></a></li>
+                    <li class="nav-item"><a href="cointoss.html" class="nav-link">Coin Toss <i data-lucide="chevron-down"></i></a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#" class="btn btn-primary">Log in <i data-lucide="chevron-down"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Facility Occupancy</h1>
+                <p class="page-description">Track real-time facility usage and manage capacity</p>
+            </div>
+        </section>
+
+        <section class="occupancy-overview-section">
+            <div class="container">
+                <div class="overview-cards">
+                    <div class="overview-card">
+                        <div class="overview-icon">
+                            <i data-lucide="users" size="32"></i>
+                        </div>
+                        <div class="overview-info">
+                            <h3 class="overview-title">Total Users</h3>
+                            <div class="overview-value">248</div>
+                            <div class="overview-change increase">
+                                <i data-lucide="trending-up"></i>
+                                <span>12% from last week</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-icon">
+                            <i data-lucide="activity" size="32"></i>
+                        </div>
+                        <div class="overview-info">
+                            <h3 class="overview-title">Active Facilities</h3>
+                            <div class="overview-value">8/10</div>
+                            <div class="overview-change">
+                                <span>2 facilities under maintenance</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-icon">
+                            <i data-lucide="percent" size="32"></i>
+                        </div>
+                        <div class="overview-info">
+                            <h3 class="overview-title">Average Occupancy</h3>
+                            <div class="overview-value">68%</div>
+                            <div class="overview-change increase">
+                                <i data-lucide="trending-up"></i>
+                                <span>5% from last week</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-icon">
+                            <i data-lucide="clock" size="32"></i>
+                        </div>
+                        <div class="overview-info">
+                            <h3 class="overview-title">Peak Hours</h3>
+                            <div class="overview-value">4PM - 7PM</div>
+                            <div class="overview-change">
+                                <span>Consistent with last month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="facilities-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Facilities Occupancy</h2>
+                    <div class="filter-controls">
+                        <select class="select-control" id="facilityTypeFilter">
+                            <option value="all">All Facilities</option>
+                            <option value="courts">Courts</option>
+                            <option value="fields">Fields</option>
+                            <option value="gyms">Gyms</option>
+                            <option value="pools">Pools</option>
+                        </select>
+                        <button class="btn btn-outline refresh-btn">
+                            <i data-lucide="refresh-cw"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+
+                <div class="facilities-grid">
+                    <!-- Basketball Court -->
+                    <div class="facility-card">
+                        <div class="facility-header">
+                            <h3 class="facility-name">Basketball Court - Main</h3>
+                            <div class="facility-status high">High Occupancy</div>
+                        </div>
+                        <div class="facility-info">
+                            <div class="facility-image">
+                                <img src="/placeholder.svg?height=150&width=250" alt="Basketball Court">
+                                <div class="facility-overlay">
+                                    <div class="occupancy-indicator">
+                                        <div class="occupancy-bar">
+                                            <div class="occupancy-fill" style="width: 85%;"></div>
+                                        </div>
+                                        <div class="occupancy-text">85% Full</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="facility-details">
+                                <div class="detail-item">
+                                    <i data-lucide="users"></i>
+                                    <span>17/20 Players</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i data-lucide="clock"></i>
+                                    <span>Open until 10:00 PM</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i data-lucide="map-pin"></i>
+                                    <span>Main Campus</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="facility-actions">
+                            <button class="btn btn-outline">View Details</button>
+                            <button class="btn btn-primary">Book Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Football Field -->
+                    <div class="facility-card">
+                        <div class="facility-header">
+                            <h3 class="facility-name">Football Field - North</h3>
+                            <div class="facility-status medium">Medium Occupancy</div>
+                        </div>
+                        <div class="facility-info">
+                            <div class="facility-image">
+                                <img src="/placeholder.svg?height=150&width=250" alt="Football Field">
+                                <div class="facility-overlay">
+                                    <div class="occupancy-indicator">
+                                        <div class="occupancy-bar">
+                                            <div class="occupancy-fill" style="width: 60%;"></div>
+                                        </div>
+                                        <div class="occupancy-text">60% Full</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="facility-details">
+                                <div class="detail-item">
+                                    <i data-lucide="users"></i>
+                                    <span>24/40 Players</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i data-lucide="clock"></i>
+                                    <span>Open until 9:00 PM</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i data-lucide="map-pin"></i>
+                                    <span>North Campus</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="facility-actions">
+                            <button class="btn btn-outline">View Details</button>
+                            <button class="btn btn-primary">Book Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Tennis Court -->
+                    <div class="facility-card">
+                        <div class="facility-header">
+                            <h3 class="facility-name">Tennis Court - East</h3>
+                            <div class="facility-status low">Low Occupancy</div>
+                        </div>
+                        <div class="facility-info">
+                            <div class="facility-image">
+                                <img src="/placeholder.svg?height=150&width=250" alt="Tennis Court">
+                                <div class="facility-overlay">
+                                    <div class="occupancy-indicator">
+                                        <div class="occupancy-bar">
+                                            <div class="occupancy-fill" style="width: 25%;"></div>
+                                        </div>
+                                        <div class="occupancy-text">25% Full</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="facility-details">
+                                <div class="detail-item">
+                                    <i data-lucide="users"></i>
+                                    <span>2/8 Players</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i data-lucide="clock"></i>
+                                    <span>Open until 8:00 PM</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i data-lucide="map-pin"></i>
+                                    <span>East Campus</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="facility-actions">
+                            <button class="btn btn-outline">View Details</button>
+                            <button class="btn btn-primary">Book Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Swimming Pool -->
+                    <div class="facility-card">
+                        <div class="facility-header">
+                            <h3 class="facility-name">Swimming Pool</h3>
+                            <div class="facility-status medium">Medium Occupancy</div>
+                        </div>
+                        <div class="facility-info">
+                            <div class="facility-image">
+                                <img src="/placeholder.svg?height=150&width=250" alt="Swimming Pool">
+                                <div class="facility-overlay">
+                                    <div class="occupancy-indicator">
+                                        <div class="occupancy-bar">
+                                            <div class="occupancy-fill" style="width: 50%;"></div>
+                                        </div>
+                                        <div class="occupancy-text">50% Full</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="facility-details">
+                                <div class="detail-item">
+                                    <i data-lucide="users"></i>
+                                    <span>15/30 Swimmers</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i data-lucide="clock"></i>
+                                    <span>Open until 9:30 PM</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i data-lucide="map-pin"></i>
+                                    <span>Main Campus</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="facility-actions">
+                            <button class="btn btn-outline">View Details</button>
+                            <button class="btn btn-primary">Book Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Volleyball Court -->
+                    <div class="facility-card">
+                        <div class="facility-header">
+                            <h3 class="facility-name">Volleyball Court</h3>
+                            <div class="facility-status high">High Occupancy</div>
+                        </div>
+                        <div class="facility-info">
+                            <div class="facility-image">
+                                <img src="/placeholder.svg?height=150&width=250" alt="Volleyball Court">
+                                <div class="facility-overlay">
+                                    <div class="occupancy-indicator">
+                                        <div class="occupancy-bar">
+                                            <div class="occupancy-fill" style="width: 75%;"></div>
+                                        </div>
+                                        <div class="occupancy-text">75% Full</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="facility-details">
+                                <div class="detail-item">
+                                    <i data-lucide="users"></i>
+                                    <span>9/12 Players</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i data-lucide="clock"></i>
+                                    <span>Open until 8:30 PM</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i data-lucide="map-pin"></i>
+                                    <span>South Campus</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="facility-actions">
+                            <button class="btn btn-outline">View Details</button>
+                            <button class="btn btn-primary">Book Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Gym -->
+                    <div class="facility-card">
+                        <div class="facility-header">
+                            <h3 class="facility-name">Fitness Center</h3>
+                            <div class="facility-status medium">Medium Occupancy</div>
+                        </div>
+                        <div class="facility-info">
+                            <div class="facility-image">
+                                <img src="/placeholder.svg?height=150&width=250" alt="Fitness Center">
+                                <div class="facility-overlay">
+                                    <div class="occupancy-indicator">
+                                        <div class="occupancy-bar">
+                                            <div class="occupancy-fill" style="width: 65%;"></div>
+                                        </div>
+                                        <div class="occupancy-text">65% Full</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="facility-details">
+                                <div class="detail-item">
+                                    <i data-lucide="users"></i>
+                                    <span>32/50 Users</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i data-lucide="clock"></i>
+                                    <span>Open until 11:00 PM</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i data-lucide="map-pin"></i>
+                                    <span>Main Campus</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="facility-actions">
+                            <button class="btn btn-outline">View Details</button>
+                            <button class="btn btn-primary">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="occupancy-trends-section">
+            <div class="container">
+                <h2 class="section-title">Occupancy Trends</h2>
+                <div class="trends-container">
+                    <div class="trends-chart">
+                        <div class="chart-placeholder">
+                            <div class="chart-header">
+                                <h3>Weekly Occupancy Patterns</h3>
+                                <div class="chart-legend">
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #3b82f6;"></span>
+                                        <span>This Week</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #94a3b8;"></span>
+                                        <span>Last Week</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chart-body">
+                                <div class="chart-bars">
+                                    <div class="chart-day">
+                                        <div class="day-label">Mon</div>
+                                        <div class="bar-container">
+                                            <div class="bar last-week" style="height: 60%;"></div>
+                                            <div class="bar this-week" style="height: 65%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="chart-day">
+                                        <div class="day-label">Tue</div>
+                                        <div class="bar-container">
+                                            <div class="bar last-week" style="height: 70%;"></div>
+                                            <div class="bar this-week" style="height: 75%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="chart-day">
+                                        <div class="day-label">Wed</div>
+                                        <div class="bar-container">
+                                            <div class="bar last-week" style="height: 55%;"></div>
+                                            <div class="bar this-week" style="height: 80%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="chart-day">
+                                        <div class="day-label">Thu</div>
+                                        <div class="bar-container">
+                                            <div class="bar last-week" style="height: 65%;"></div>
+                                            <div class="bar this-week" style="height: 70%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="chart-day">
+                                        <div class="day-label">Fri</div>
+                                        <div class="bar-container">
+                                            <div class="bar last-week" style="height: 75%;"></div>
+                                            <div class="bar this-week" style="height: 85%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="chart-day">
+                                        <div class="day-label">Sat</div>
+                                        <div class="bar-container">
+                                            <div class="bar last-week" style="height: 85%;"></div>
+                                            <div class="bar this-week" style="height: 90%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="chart-day">
+                                        <div class="day-label">Sun</div>
+                                        <div class="bar-container">
+                                            <div class="bar last-week" style="height: 50%;"></div>
+                                            <div class="bar this-week" style="height: 55%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trends-stats">
+                        <div class="stats-card">
+                            <h3 class="stats-title">Busiest Day</h3>
+                            <div class="stats-value">Saturday</div>
+                            <div class="stats-description">90% average occupancy</div>
+                        </div>
+                        <div class="stats-card">
+                            <h3 class="stats-title">Quietest Day</h3>
+                            <div class="stats-value">Sunday</div>
+                            <div class="stats-description">55% average occupancy</div>
+                        </div>
+                        <div class="stats-card">
+                            <h3 class="stats-title">Busiest Facility</h3>
+                            <div class="stats-value">Basketball Court</div>
+                            <div class="stats-description">85% average occupancy</div>
+                        </div>
+                        <div class="stats-card">
+                            <h3 class="stats-title">Weekly Growth</h3>
+                            <div class="stats-value">+8%</div>
+                            <div class="stats-description">Compared to last week</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="booking-cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-content">
+                        <h2 class="cta-title">Ready to book a facility?</h2>
+                        <p class="cta-description">Reserve your spot in advance to ensure availability during peak hours.</p>
+                        <div class="cta-actions">
+                            <a href="bookingsystem.html" class="btn btn-primary">Book Now</a>
+                            <a href="#" class="btn btn-outline">View Availability</a>
+                        </div>
+                    </div>
+                    <div class="cta-image">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Booking Illustration">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-title">Platform</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Scan</a></li>
+                        <li><a href="#">Sports</a></li>
+                        <li><a href="#">Leaderboard</a></li>
+                        <li><a href="#">Live Scoring</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Features</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Occupancy</a></li>
+                        <li><a href="#">Player Search</a></li>
+                        <li><a href="#">Booking</a></li>
+                        <li><a href="#">Others</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 SportsBook | Made with ❤️ by the SportsBook Team</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

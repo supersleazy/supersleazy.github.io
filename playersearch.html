@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Search - SportsBook</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="sportsBook_logo.png" alt="SportsBook Logo" class="logo">
+                <h1 class="logo-text">SportsBook</h1>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#" class="nav-link">Sports <i data-lucide="chevron-down"></i></a></li>
+                    <li class="nav-item"><a href="live_scoring.html" class="nav-link">Live Scoring <i data-lucide="chevron-down"></i></a></li>
+                    <li class="nav-item"><a href="cointoss.html" class="nav-link">Coin Toss <i data-lucide="chevron-down"></i></a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#" class="btn btn-primary">Log in <i data-lucide="chevron-down"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Player Search</h1>
+                <p class="page-description">Find players based on skills, position, and performance metrics</p>
+            </div>
+        </section>
+
+        <section class="search-section">
+            <div class="container">
+                <div class="search-container">
+                    <div class="search-box">
+                        <i data-lucide="search" class="search-icon"></i>
+                        <input type="text" class="search-input" placeholder="Search by name, team, or position...">
+                        <button class="btn btn-primary search-btn">Search</button>
+                    </div>
+                    <div class="advanced-search-toggle">
+                        <button class="btn btn-text" id="advancedSearchToggle">
+                            Advanced Search <i data-lucide="chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="advanced-search-filters" id="advancedSearchFilters">
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label for="sportFilter">Sport</label>
+                            <select id="sportFilter" class="select-control">
+                                <option value="">All Sports</option>
+                                <option value="basketball">Basketball</option>
+                                <option value="football">Football</option>
+                                <option value="volleyball">Volleyball</option>
+                                <option value="tennis">Tennis</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="positionFilter">Position</label>
+                            <select id="positionFilter" class="select-control">
+                                <option value="">All Positions</option>
+                                <option value="forward">Forward</option>
+                                <option value="guard">Guard</option>
+                                <option value="center">Center</option>
+                                <option value="midfielder">Midfielder</option>
+                                <option value="defender">Defender</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="teamFilter">Team</label>
+                            <select id="teamFilter" class="select-control">
+                                <option value="">All Teams</option>
+                                <option value="team-alpha">Team Alpha</option>
+                                <option value="team-beta">Team Beta</option>
+                                <option value="eagles-fc">Eagles FC</option>
+                                <option value="lions-united">Lions United</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="skillLevelFilter">Skill Level</label>
+                            <select id="skillLevelFilter" class="select-control">
+                                <option value="">All Levels</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                                <option value="professional">Professional</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label for="ageRangeFilter">Age Range</label>
+                            <div class="range-slider">
+                                <input type="range" id="ageRangeFilter" min="18" max="40" value="18" class="range-input">
+                                <span class="range-value" id="ageRangeValue">18+</span>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label for="availabilityFilter">Availability</label>
+                            <select id="availabilityFilter" class="select-control">
+                                <option value="">Any Availability</option>
+                                <option value="weekdays">Weekdays</option>
+                                <option value="weekends">Weekends</option>
+                                <option value="evenings">Evenings</option>
+                                <option value="mornings">Mornings</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="locationFilter">Location</label>
+                            <select id="locationFilter" class="select-control">
+                                <option value="">All Locations</option>
+                                <option value="main-campus">Main Campus</option>
+                                <option value="north-campus">North Campus</option>
+                                <option value="south-campus">South Campus</option>
+                                <option value="east-campus">East Campus</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-actions">
+                        <button class="btn btn-outline">Reset Filters</button>
+                        <button class="btn btn-primary">Apply Filters</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div class="container">
+                <div class="results-header">
+                    <h2 class="section-title">Search Results</h2>
+                    <div class="results-count">Showing <span id="resultsCount">24</span> players</div>
+                    <div class="results-sort">
+                        <label for="sortResults">Sort by:</label>
+                        <select id="sortResults" class="select-control">
+                            <option value="relevance">Relevance</option>
+                            <option value="name-asc">Name (A-Z)</option>
+                            <option value="name-desc">Name (Z-A)</option>
+                            <option value="rating-desc">Rating (High to Low)</option>
+                            <option value="rating-asc">Rating (Low to High)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="players-grid">
+                    <!-- Player Card 1 -->
+                    <div class="player-card">
+                        <div class="player-avatar">
+                            <img src="/placeholder.svg?height=120&width=120" alt="Player Avatar">
+                        </div>
+                        <div class="player-info">
+                            <h3 class="player-name">John Doe</h3>
+                            <div class="player-meta">
+                                <span class="player-position">Forward</span>
+                                <span class="player-sport">Basketball</span>
+                            </div>
+                            <div class="player-team">Team Alpha</div>
+                            <div class="player-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Games</span>
+                                    <span class="stat-value">42</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Avg. Points</span>
+                                    <span class="stat-value">18.5</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Rating</span>
+                                    <span class="stat-value">4.8</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-actions">
+                            <button class="btn btn-sm btn-outline">View Profile</button>
+                            <button class="btn btn-sm btn-primary">Contact</button>
+                        </div>
+                    </div>
+
+                    <!-- Player Card 2 -->
+                    <div class="player-card">
+                        <div class="player-avatar">
+                            <img src="/placeholder.svg?height=120&width=120" alt="Player Avatar">
+                        </div>
+                        <div class="player-info">
+                            <h3 class="player-name">Jane Smith</h3>
+                            <div class="player-meta">
+                                <span class="player-position">Guard</span>
+                                <span class="player-sport">Basketball</span>
+                            </div>
+                            <div class="player-team">Team Beta</div>
+                            <div class="player-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Games</span>
+                                    <span class="stat-value">38</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Avg. Points</span>
+                                    <span class="stat-value">15.2</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Rating</span>
+                                    <span class="stat-value">4.6</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-actions">
+                            <button class="btn btn-sm btn-outline">View Profile</button>
+                            <button class="btn btn-sm btn-primary">Contact</button>
+                        </div>
+                    </div>
+
+                    <!-- Player Card 3 -->
+                    <div class="player-card">
+                        <div class="player-avatar">
+                            <img src="/placeholder.svg?height=120&width=120" alt="Player Avatar">
+                        </div>
+                        <div class="player-info">
+                            <h3 class="player-name">Michael Johnson</h3>
+                            <div class="player-meta">
+                                <span class="player-position">Midfielder</span>
+                                <span class="player-sport">Football</span>
+                            </div>
+                            <div class="player-team">Eagles FC</div>
+                            <div class="player-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Games</span>
+                                    <span class="stat-value">28</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Goals</span>
+                                    <span class="stat-value">12</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Rating</span>
+                                    <span class="stat-value">4.7</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-actions">
+                            <button class="btn btn-sm btn-outline">View Profile</button>
+                            <button class="btn btn-sm btn-primary">Contact</button>
+                        </div>
+                    </div>
+
+                    <!-- Player Card 4 -->
+                    <div class="player-card">
+                        <div class="player-avatar">
+                            <img src="/placeholder.svg?height=120&width=120" alt="Player Avatar">
+                        </div>
+                        <div class="player-info">
+                            <h3 class="player-name">Sarah Williams</h3>
+                            <div class="player-meta">
+                                <span class="player-position">Defender</span>
+                                <span class="player-sport">Football</span>
+                            </div>
+                            <div class="player-team">Lions United</div>
+                            <div class="player-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Games</span>
+                                    <span class="stat-value">32</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Assists</span>
+                                    <span class="stat-value">8</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Rating</span>
+                                    <span class="stat-value">4.5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-actions">
+                            <button class="btn btn-sm btn-outline">View Profile</button>
+                            <button class="btn btn-sm btn-primary">Contact</button>
+                        </div>
+                    </div>
+
+                    <!-- Player Card 5 -->
+                    <div class="player-card">
+                        <div class="player-avatar">
+                            <img src="/placeholder.svg?height=120&width=120" alt="Player Avatar">
+                        </div>
+                        <div class="player-info">
+                            <h3 class="player-name">David Brown</h3>
+                            <div class="player-meta">
+                                <span class="player-position">Center</span>
+                                <span class="player-sport">Basketball</span>
+                            </div>
+                            <div class="player-team">Team Alpha</div>
+                            <div class="player-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Games</span>
+                                    <span class="stat-value">40</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Rebounds</span>
+                                    <span class="stat-value">10.2</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Rating</span>
+                                    <span class="stat-value">4.9</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-actions">
+                            <button class="btn btn-sm btn-outline">View Profile</button>
+                            <button class="btn btn-sm btn-primary">Contact</button>
+                        </div>
+                    </div>
+
+                    <!-- Player Card 6 -->
+                    <div class="player-card">
+                        <div class="player-avatar">
+                            <img src="/placeholder.svg?height=120&width=120" alt="Player Avatar">
+                        </div>
+                        <div class="player-info">
+                            <h3 class="player-name">Emily Davis</h3>
+                            <div class="player-meta">
+                                <span class="player-position">Setter</span>
+                                <span class="player-sport">Volleyball</span>
+                            </div>
+                            <div class="player-team">Spikers</div>
+                            <div class="player-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Games</span>
+                                    <span class="stat-value">25</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Assists</span>
+                                    <span class="stat-value">245</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Rating</span>
+                                    <span class="stat-value">4.7</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="player-actions">
+                            <button class="btn btn-sm btn-outline">View Profile</button>
+                            <button class="btn btn-sm btn-primary">Contact</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <button class="pagination-btn" disabled><i data-lucide="chevron-left"></i></button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn">4</button>
+                    <button class="pagination-btn"><i data-lucide="chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-title">Platform</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Scan</a></li>
+                        <li><a href="#">Sports</a></li>
+                        <li><a href="#">Leaderboard</a></li>
+                        <li><a href="#">Live Scoring</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Features</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Occupancy</a></li>
+                        <li><a href="#">Player Search</a></li>
+                        <li><a href="#">Booking</a></li>
+                        <li><a href="#">Others</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 SportsBook | Made with ❤️ by the SportsBook Team</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Toggle advanced search filters
+        document.getElementById('advancedSearchToggle').addEventListener('click', function() {
+            const filtersElement = document.getElementById('advancedSearchFilters');
+            filtersElement.classList.toggle('show');
+            
+            const icon = this.querySelector('i');
+            if (filtersElement.classList.contains('show')) {
+                icon.setAttribute('data-lucide', 'chevron-up');
+            } else {
+                icon.setAttribute('data-lucide', 'chevron-down');
+            }
+            lucide.createIcons();
+        });
+
+        // Age range slider
+        const ageRangeSlider = document.getElementById('ageRangeFilter');
+        const ageRangeValue = document.getElementById('ageRangeValue');
+        
+        ageRangeSlider.addEventListener('input', function() {
+            ageRangeValue.textContent = this.value + '+';
+        });
+    </script>
+</body>
+</html>
