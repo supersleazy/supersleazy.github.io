@@ -60,7 +60,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Dropdown (sport-selector) styling for both Live Vacancy and Time Table & Data Analysis */
+/* Dropdown (sport-selector) styling for both Live Vacancy, Time Table & Data Analysis */
 .sport-selector {
   text-align: center;
   margin-bottom: 20px;
@@ -234,12 +234,62 @@
   height: 100%;
 }
 
+/* Markings for each sport (from original styles) */
 .badminton-court {
   background-color: #3a3a3a;
   background-image: linear-gradient(to right, transparent 49%, #444 49%, #444 51%, transparent 51%),
                     linear-gradient(to bottom, transparent 20%, #444 20%, #444 21%, transparent 21%),
                     linear-gradient(to bottom, transparent 79%, #444 79%, #444 80%, transparent 80%);
   border: 2px solid #555;
+}
+
+.gym-area {
+  background-color: #3a3a3a;
+  background-image: repeating-linear-gradient(45deg, #333, #333 10px, #3a3a3a 10px, #3a3a3a 20px);
+}
+
+.cricket-field {
+  background-color: #3a3a3a;
+  border-radius: 50%;
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+  border: 2px solid #555;
+}
+
+.football-field {
+  background-color: #3a3a3a;
+  border: 2px solid #555;
+  background-image: linear-gradient(to right, transparent 49%, #444 49%, #444 51%, transparent 51%),
+                    linear-gradient(to bottom, transparent 10%, #444 10%, #444 11%, transparent 11%),
+                    linear-gradient(to bottom, transparent 89%, #444 89%, #444 90%, transparent 90%);
+}
+
+.basketball-court {
+  background-color: #3a3a3a;
+  border: 2px solid #555;
+  background-image: radial-gradient(circle at center, #444 5%, transparent 6%);
+}
+
+.volleyball-court {
+  background-color: #3a3a3a;
+  border: 2px solid #555;
+  background-image: linear-gradient(to right, transparent 49%, #444 49%, #444 51%, transparent 51%);
+}
+
+.tabletennis-area {
+  background-color: #3a3a3a;
+  background-image: linear-gradient(to right, transparent 49%, #444 49%, #444 51%, transparent 51%),
+                    linear-gradient(to bottom, transparent 49%, #444 49%, #444 51%, transparent 51%);
+  border: 2px solid #555;
+}
+
+.tennis-court {
+  background-color: #3a3a3a;
+  border: 2px solid #555;
+  background-image: linear-gradient(to right, transparent 49%, #444 49%, #444 51%, transparent 51%),
+                    linear-gradient(to bottom, transparent 20%, #444 20%, #444 21%, transparent 21%),
+                    linear-gradient(to bottom, transparent 79%, #444 79%, #444 80%, transparent 80%);
 }
 
 .court-player {
@@ -251,9 +301,7 @@
   transform: translate(-50%, -50%);
 }
 
-/* -------------------------------------------------------------------
-   Timetable Section (Using Original CSS)
---------------------------------------------------------------------- */
+/* Time Table Section (Using original code) */
 .timetable-container {
   background-color: #222;
   border-radius: 8px;
@@ -283,7 +331,7 @@
 }
 
 .time-column {
-  min-width: 100px;
+  min-width: 120px;
   padding: 10px;
   border-right: 1px solid #444;
   text-align: center;
@@ -314,7 +362,33 @@
   border-bottom: none;
 }
 
-/* Legend */
+/* Color-coded classes from original code */
+.day-column.faculty {
+  background-color: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+}
+
+.day-column.team {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+}
+
+.day-column.girls {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+}
+
+.day-column.mtech {
+  background-color: rgba(111, 66, 193, 0.2);
+  color: #6f42c1;
+}
+
+.day-column.open {
+  background-color: rgba(23, 162, 184, 0.2);
+  color: #17a2b8;
+}
+
+/* Timetable Legend */
 .timetable-legend {
   display: flex;
   flex-wrap: wrap;
@@ -364,9 +438,7 @@
   color: var(--light-grey);
 }
 
-/* -------------------------------------------------------------------
-   Data Analysis Section (Using Original CSS)
---------------------------------------------------------------------- */
+/* Data Analysis Section (Using original code) */
 .analysis-container {
   display: flex;
   flex-wrap: wrap;

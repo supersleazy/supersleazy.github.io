@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Real-time Occupancy | SportsBook</title>
+  <!-- Shared and Page-Specific CSS -->
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/occupancy.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
   <!-- Chart.js for data visualization -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -50,9 +54,17 @@
         <li>
           <span>Company</span>
           <ul>
-            <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">About Us</a></li>
+            <li>
+              <a href="https://www.instagram.com/kirat.g09/?utm_source=qr"
+                >About Us</a
+              >
+            </li>
             <li><a href="#">Careers</a></li>
-            <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">Contact</a></li>
+            <li>
+              <a href="https://www.instagram.com/kirat.g09/?utm_source=qr"
+                >Contact</a
+              >
+            </li>
             <li><a href="#">Privacy Policy</a></li>
           </ul>
         </li>
@@ -69,28 +81,31 @@
       </div>
       <div class="logo">
         <a href="index.html" class="logo-link">
-          <img src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true" alt="SportsBook Logo" class="header-logo" />
+          <img
+            src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true"
+            alt="SportsBook Logo"
+            class="header-logo"
+          />
           <span class="logo-text">SportsBook</span>
         </a>
       </div>
-      <!-- Main navigation removed for mobile simplicity -->
       <div class="header-right">
         <a href="#" class="login-btn">Log in <i class="fas fa-chevron-down"></i></a>
       </div>
     </div>
   </header>
 
-  <!-- Main Content -->
+  <!-- Main Container -->
   <div class="main-container">
     <h1 class="page-title">Real-time Occupancy</h1>
-    
+
     <!-- Tabs -->
     <div class="tabs">
       <button class="tab-button active" onclick="showTab('liveVacancy', event)">Live Vacancy</button>
       <button class="tab-button" onclick="showTab('timeTable', event)">Time Table</button>
       <button class="tab-button" onclick="showTab('dataAnalysis', event)">Data Analysis</button>
     </div>
-    
+
     <!-- Live Vacancy Section -->
     <div id="liveVacancy" class="tab-content active">
       <div class="sport-selector">
@@ -106,8 +121,9 @@
           <option value="lawntennis">Lawn Tennis</option>
         </select>
       </div>
-      
+
       <div class="occupancy-display">
+        <!-- Left Card: Occupancy & Equipment -->
         <div class="occupancy-card">
           <div class="occupancy-header">
             <h2 id="sportTitle">Badminton</h2>
@@ -129,22 +145,22 @@
               </div>
             </div>
           </div>
-          
           <h3>Equipment in Use</h3>
           <div class="equipment-list" id="equipmentList">
-            <!-- Equipment items updated dynamically -->
+            <!-- Dynamically updated by JS -->
           </div>
         </div>
-        
+
+        <!-- Right Card: Court Visualization -->
         <div class="court-visualization">
           <h3>Court Visualization</h3>
           <div class="court-container" id="courtContainer">
-            <!-- Court visualization updated dynamically -->
+            <!-- Dynamically updated by JS -->
           </div>
         </div>
       </div>
     </div>
-    
+
     <!-- Time Table Section -->
     <div id="timeTable" class="tab-content">
       <div class="sport-selector">
@@ -160,12 +176,12 @@
           <option value="lawntennis">Lawn Tennis</option>
         </select>
       </div>
-      
+
       <div class="timetable-container">
         <h2 id="timeTableSportTitle">Badminton - Weekly Schedule</h2>
         <div class="timetable">
           <div class="timetable-header">
-            <div class="time-column">Time</div>
+            <div class="time-column">06:00 - 08:00</div>
             <div class="day-column">Monday</div>
             <div class="day-column">Tuesday</div>
             <div class="day-column">Wednesday</div>
@@ -175,9 +191,9 @@
             <div class="day-column">Sunday</div>
           </div>
           <div class="timetable-body" id="timetableBody">
-            <!-- Time rows (static content or dynamically updated) -->
+            <!-- Example time rows with color-coded slots -->
             <div class="time-row">
-              <div class="time-column">6:00 - 8:00</div>
+              <div class="time-column">06:00 - 08:00</div>
               <div class="day-column faculty">Faculty</div>
               <div class="day-column">-</div>
               <div class="day-column faculty">Faculty</div>
@@ -187,7 +203,7 @@
               <div class="day-column">-</div>
             </div>
             <div class="time-row">
-              <div class="time-column">8:00 - 10:00</div>
+              <div class="time-column">08:00 - 10:00</div>
               <div class="day-column girls">Girls</div>
               <div class="day-column team">College Team</div>
               <div class="day-column girls">Girls</div>
@@ -258,7 +274,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="timetable-legend">
           <div class="legend-item">
             <span class="legend-color faculty"></span>
@@ -282,58 +298,55 @@
           </div>
         </div>
       </div>
-      
-      <!-- Data Analysis Section -->
-      <div id="dataAnalysis" class="tab-content">
-        <div class="sport-selector">
-          <label for="analysisSportSelect">Select Sport:</label>
-          <select id="analysisSportSelect" onchange="updateAnalysisCharts()">
-            <option value="badminton">Badminton</option>
-            <option value="gym">Gym</option>
-            <option value="cricket">Cricket</option>
-            <option value="football">Football</option>
-            <option value="basketball">Basketball</option>
-            <option value="volleyball">Volleyball</option>
-            <option value="tabletennis">Table Tennis</option>
-            <option value="lawntennis">Lawn Tennis</option>
-          </select>
+    </div>
+
+    <!-- Data Analysis Section -->
+    <div id="dataAnalysis" class="tab-content">
+      <div class="sport-selector">
+        <label for="analysisSportSelect">Select Sport:</label>
+        <select id="analysisSportSelect" onchange="updateAnalysisCharts()">
+          <option value="badminton">Badminton</option>
+          <option value="gym">Gym</option>
+          <option value="cricket">Cricket</option>
+          <option value="football">Football</option>
+          <option value="basketball">Basketball</option>
+          <option value="volleyball">Volleyball</option>
+          <option value="tabletennis">Table Tennis</option>
+          <option value="lawntennis">Lawn Tennis</option>
+        </select>
+      </div>
+
+      <div class="analysis-container">
+        <div class="chart-container">
+          <h3>Weekly Attendance</h3>
+          <canvas id="weeklyChart"></canvas>
         </div>
-        
-        <div class="analysis-container">
-          <div class="chart-container">
-            <h3>Weekly Attendance</h3>
-            <canvas id="weeklyChart"></canvas>
-          </div>
-          
-          <div class="chart-container">
-            <h3>Monthly Attendance</h3>
-            <canvas id="monthlyChart"></canvas>
-          </div>
-          
-          <div class="chart-container">
-            <h3>Peak Hours (Last 30 Days)</h3>
-            <canvas id="peakHoursChart"></canvas>
-          </div>
-          
-          <div class="stats-container">
-            <h3>Usage Statistics</h3>
-            <div class="stats-grid">
-              <div class="stat-card">
-                <div class="stat-value" id="totalUsers">245</div>
-                <div class="stat-label">Total Users This Month</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value" id="avgDuration">1.5</div>
-                <div class="stat-label">Average Session (hours)</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value" id="peakDay">Friday</div>
-                <div class="stat-label">Most Popular Day</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value" id="peakTime">18:00</div>
-                <div class="stat-label">Peak Time</div>
-              </div>
+        <div class="chart-container">
+          <h3>Monthly Attendance</h3>
+          <canvas id="monthlyChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <h3>Peak Hours (Last 30 Days)</h3>
+          <canvas id="peakHoursChart"></canvas>
+        </div>
+        <div class="stats-container">
+          <h3>Usage Statistics</h3>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-value" id="totalUsers">245</div>
+              <div class="stat-label">Total Users This Month</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="avgDuration">1.5</div>
+              <div class="stat-label">Average Session (hours)</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="peakDay">Friday</div>
+              <div class="stat-label">Most Popular Day</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="peakTime">18:00</div>
+              <div class="stat-label">Peak Time</div>
             </div>
           </div>
         </div>
@@ -375,9 +388,17 @@
         <div class="footer-column">
           <h4>Company</h4>
           <ul>
-            <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">About Us</a></li>
+            <li>
+              <a href="https://www.instagram.com/kirat.g09/?utm_source=qr"
+                >About Us</a
+              >
+            </li>
             <li><a href="#">Careers</a></li>
-            <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">Contact</a></li>
+            <li>
+              <a href="https://www.instagram.com/kirat.g09/?utm_source=qr"
+                >Contact</a
+              >
+            </li>
             <li><a href="#">Privacy Policy</a></li>
           </ul>
         </div>
@@ -394,6 +415,7 @@
     </div>
   </footer>
 
+  <!-- JavaScript for Mobile Menu, Tabs, Court Visualization, Timetable, and Charts -->
   <script>
     // Mobile Menu Toggle
     const menuIcon = document.querySelector('.menu-icon');
@@ -408,23 +430,23 @@
       mobileMenu.classList.remove('active');
     });
 
-    // Tab switching functionality – note we pass event to correctly set active class
+    // Tab switching functionality
     function showTab(tabId, event) {
       const tabContents = document.querySelectorAll('.tab-content');
       tabContents.forEach(content => content.classList.remove('active'));
-      
+
       const tabButtons = document.querySelectorAll('.tab-button');
       tabButtons.forEach(button => button.classList.remove('active'));
-      
+
       document.getElementById(tabId).classList.add('active');
       event.target.classList.add('active');
-      
+
       if (tabId === 'dataAnalysis') {
         initializeCharts();
       }
     }
 
-    // Full sportsData object (original content)
+    // Full sportsData object with court lines
     const sportsData = {
       badminton: {
         title: 'Badminton',
@@ -500,9 +522,9 @@
         players: Array.from({ length: 14 }, (_, i) => {
           const row = Math.floor(i / 7);
           const col = i % 7;
-          return { 
-            top: `${20 + row * 50}%`, 
-            left: `${10 + col * 13}%` 
+          return {
+            top: `${20 + row * 50}%`,
+            left: `${10 + col * 13}%`
           };
         })
       },
@@ -518,9 +540,9 @@
         players: Array.from({ length: 8 }, (_, i) => {
           const row = Math.floor(i / 4);
           const col = i % 4;
-          return { 
-            top: `${20 + row * 50}%`, 
-            left: `${20 + col * 20}%` 
+          return {
+            top: `${20 + row * 50}%`,
+            left: `${20 + col * 20}%`
           };
         })
       },
@@ -536,9 +558,9 @@
         players: Array.from({ length: 10 }, (_, i) => {
           const row = Math.floor(i / 5);
           const col = i % 5;
-          return { 
-            top: `${30 + row * 40}%`, 
-            left: `${10 + col * 20}%` 
+          return {
+            top: `${30 + row * 40}%`,
+            left: `${10 + col * 20}%`
           };
         })
       },
@@ -582,12 +604,16 @@
       const sportSelect = document.getElementById('sportSelect');
       const selectedSport = sportSelect.value;
       const sportData = sportsData[selectedSport];
-      
+
+      // Title & Students
       document.getElementById('sportTitle').textContent = sportData.title;
       document.getElementById('studentCount').textContent = sportData.students;
+
+      // Occupancy Rate
       const occupancyRate = Math.round((sportData.students / sportData.capacity) * 100);
       document.getElementById('occupancyRate').textContent = `${occupancyRate}%`;
-      
+
+      // Equipment List
       const equipmentList = document.getElementById('equipmentList');
       equipmentList.innerHTML = '';
       sportData.equipment.forEach(item => {
@@ -599,11 +625,13 @@
         `;
         equipmentList.appendChild(equipmentItem);
       });
-      
+
+      // Court Visualization
       const courtContainer = document.getElementById('courtContainer');
       courtContainer.innerHTML = '';
       const court = document.createElement('div');
       court.className = `court ${sportData.courtType}`;
+
       sportData.players.forEach((player, index) => {
         const playerElement = document.createElement('div');
         playerElement.className = 'court-player';
@@ -613,7 +641,8 @@
         court.appendChild(playerElement);
       });
       courtContainer.appendChild(court);
-      
+
+      // Status Badge
       const statusBadge = document.querySelector('.status-badge');
       if (occupancyRate >= 90) {
         statusBadge.className = 'status-badge full';
@@ -626,16 +655,17 @@
         statusBadge.textContent = 'Available';
       }
     }
-    
+
     function updateTimeTable() {
       const sportSelect = document.getElementById('timeTableSportSelect');
       const selectedSport = sportSelect.value;
       document.getElementById('timeTableSportTitle').textContent = `${sportsData[selectedSport].title} - Weekly Schedule`;
       console.log(`Timetable updated for ${selectedSport}`);
     }
-    
+
     let weeklyChart, monthlyChart, peakHoursChart;
-    
+
+    // Initialize Charts
     function initializeCharts() {
       const weeklyCtx = document.getElementById('weeklyChart').getContext('2d');
       weeklyChart = new Chart(weeklyCtx, {
@@ -668,7 +698,7 @@
           }
         }
       });
-      
+
       const monthlyCtx = document.getElementById('monthlyChart').getContext('2d');
       monthlyChart = new Chart(monthlyCtx, {
         type: 'line',
@@ -702,12 +732,12 @@
           }
         }
       });
-      
+
       const peakHoursCtx = document.getElementById('peakHoursChart').getContext('2d');
       peakHoursChart = new Chart(peakHoursCtx, {
         type: 'bar',
         data: {
-          labels: ['6-8', '8-10', '10-12', '12-14', '14-16', '16-18', '18-20', '20-22'],
+          labels: ['06-08', '08-10', '10-12', '12-14', '14-16', '16-18', '18-20', '20-22'],
           datasets: [{
             label: 'Average Users',
             data: [8, 15, 12, 5, 18, 25, 30, 20],
@@ -735,38 +765,42 @@
         }
       });
     }
-    
+
     function updateAnalysisCharts() {
       const sportSelect = document.getElementById('analysisSportSelect');
       const selectedSport = sportSelect.value;
-      
+
+      // Generate random data for demonstration
       const weeklyData = Array.from({ length: 7 }, () => Math.floor(Math.random() * 30) + 10);
       weeklyChart.data.datasets[0].data = weeklyData;
       weeklyChart.update();
-      
+
       const monthlyData = Array.from({ length: 4 }, () => Math.floor(Math.random() * 50) + 100);
       monthlyChart.data.datasets[0].data = monthlyData;
       monthlyChart.update();
-      
+
       const peakHoursData = Array.from({ length: 8 }, () => Math.floor(Math.random() * 25) + 5);
       peakHoursChart.data.datasets[0].data = peakHoursData;
       peakHoursChart.update();
-      
+
       document.getElementById('totalUsers').textContent = Math.floor(Math.random() * 200) + 100;
       document.getElementById('avgDuration').textContent = (Math.random() * 2 + 0.5).toFixed(1);
-      
+
       const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
       const randomDay = days[Math.floor(Math.random() * days.length)];
       document.getElementById('peakDay').textContent = randomDay;
-      
+
       const hours = ['10:00', '14:00', '16:00', '18:00', '20:00'];
       const randomHour = hours[Math.floor(Math.random() * hours.length)];
       document.getElementById('peakTime').textContent = randomHour;
     }
-    
+
     document.addEventListener('DOMContentLoaded', function() {
+      // Initialize default tab
       showTab('liveVacancy', { target: document.querySelector('.tab-button.active') });
+      // Initialize Live Vacancy
       updateLiveVacancy();
+      // Initialize Time Table
       updateTimeTable();
     });
   </script>
