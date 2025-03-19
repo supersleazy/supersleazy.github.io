@@ -299,3 +299,80 @@ footer {
     margin-top: 15px;
   }
 }
+/* Slide-In Menu Bar */
+.menu-bar {
+  position: fixed;
+  top: 0;
+  left: -100%; /* hidden by default */
+  width: 80%;
+  max-width: 300px;
+  height: 100%;
+  background-color: #0c1422; /* matches your header color */
+  z-index: 2000;
+  transition: left 0.3s ease-in-out;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.menu-bar.active {
+  left: 0;
+}
+
+.menu-bar .menu-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.menu-bar .menu-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-bar .menu-items > li {
+  margin-bottom: 15px;
+}
+
+.menu-bar a {
+  color: #fff;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: block;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-bar a:hover {
+  color: var(--accent-color);
+}
+
+.menu-bar .menu-parent > a::after {
+  content: "\f107"; /* Font Awesome down arrow */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  float: right;
+  margin-right: 10px;
+}
+
+.menu-bar .submenu {
+  list-style: none;
+  padding-left: 15px;
+  margin-top: 5px;
+  display: none;
+}
+
+.menu-bar .menu-parent.active > .submenu {
+  display: block;
+}
+
+/* Optional: Indent submenu items */
+.menu-bar .submenu li a {
+  font-size: 1rem;
+  padding: 6px 0;
+  border: none;
+}
+

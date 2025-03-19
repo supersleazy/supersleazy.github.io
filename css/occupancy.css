@@ -93,7 +93,7 @@
 
 /* Occupancy Card */
 .occupancy-card {
-  background-color: #27303f;
+  background-color: #222;
   border-radius: 8px;
   padding: 20px;
   width: 100%;
@@ -202,7 +202,7 @@
 
 /* Court Visualization */
 .court-visualization {
-  background-color: #27303f;
+  background-color: #222;
   border-radius: 8px;
   padding: 20px;
   width: 100%;
@@ -215,6 +215,7 @@
 .court-visualization h3 {
   margin-bottom: 15px;
   font-size: 1.5rem;
+  color: var(--accent-color);
 }
 
 .court-container {
