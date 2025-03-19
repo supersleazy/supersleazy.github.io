@@ -4,104 +4,82 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Real-time Occupancy | SportsBook</title>
-  <!-- Shared and Page-Specific CSS -->
+  <!-- Base and Page-Specific CSS -->
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/occupancy.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <!-- Chart.js for data visualization -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <!-- Slide-In Menu Bar -->
-  <div class="menu-bar" id="menuBar">
-    <button class="menu-close" id="menuClose">
-      <i class="fas fa-times"></i>
-    </button>
-    <ul class="menu-items">
-      <li>
-        <a href="index.html">Home</a>
-      </li>
-      <li class="menu-parent">
-        <a href="#">Platform</a>
-        <ul class="submenu">
-          <li><a href="index.html">Scan</a></li>
-          <li><a href="index.html">Sports</a></li>
-          <li><a href="#">Leaderboard</a></li>
-          <li class="menu-parent">
-            <a href="live_scoring.html">Live Scoring</a>
-            <ul class="submenu">
-              <li><a href="cointoss.html">Coin Toss</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li class="menu-parent">
-        <a href="#">Features</a>
-        <ul class="submenu">
-          <li><a href="occupancy.html">Occupancy</a></li>
-          <li><a href="playersearch.html">Player Search</a></li>
-          <li><a href="bookingsystem.html">Booking</a></li>
-          <li><a href="others.html">Others</a></li>
-        </ul>
-      </li>
-      <li class="menu-parent">
-        <a href="#">Resources</a>
-        <ul class="submenu">
-          <li><a href="#">Help Center</a></li>
-          <li><a href="#">Community</a></li>
-          <li><a href="#">Tutorials</a></li>
-          <li><a href="#">Blog</a></li>
-        </ul>
-      </li>
-      <li class="menu-parent">
-        <a href="#">Company</a>
-        <ul class="submenu">
-          <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">About Us</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">Contact</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+  <!-- Sidebar (Collapsible) -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2 style="color:#0782da">Menu</h2>
+      <button class="sidebar-close" id="sidebarClose">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li class="menu-parent">
+          <span class="menu-title" style="color:#0782da">Platform</span>
+          <ul class="submenu">
+            <li><a href="index.html">Scan</a></li>
+            <li><a href="index.html">Sports</a></li>
+            <li><a href="#">Leaderboard</a></li>
+            <li><a href="live_scoring.html">Live Scoring</a></li>
+          </ul>
+        </li>
+        <li class="menu-parent">
+          <span class="menu-title" style="color:#0782da">Features</span>
+          <ul class="submenu">
+            <li><a href="occupancy.html">Occupancy</a></li>
+            <li><a href="playersearch.html">Player Search</a></li>
+            <li><a href="bookingsystem.html">Booking</a></li>
+            <li><a href="cointoss.html">Coin Toss</a></li>
+            <li><a href="others.html">Others</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </aside>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header>
-    <div class="header-content container">
-      <!-- Logo and Menu Toggle (Menu appears just below logo on mobile) -->
-      <div class="header-left">
-        <div class="logo">
-          <a href="index.html" class="logo-link">
-            <img src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true" alt="SportsBook Logo" class="header-logo" />
-            <span class="logo-text">SportsBook</span>
-          </a>
-        </div>
-        <!-- Hamburger Menu Icon placed just below the logo on mobile -->
-        <div class="menu-icon" id="menuIcon">
-          <i class="fas fa-bars"></i>
-        </div>
+    <div class="header-content">
+      <!-- Menu Button (Styled like the login button) -->
+      <div class="menu-btn" id="menuBtn">Menu</div>
+      <!-- Centered SportsBook Logo & Text -->
+      <div class="header-center">
+        <a href="index.html" class="logo-link">
+          <img src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true" alt="SportsBook Logo" class="header-logo" />
+          <span class="logo-text">SportsBook</span>
+        </a>
       </div>
+      <!-- Login Button on the Right -->
       <div class="header-right">
         <a href="#" class="login-btn">Log in</a>
       </div>
     </div>
   </header>
 
-  <!-- Main Container -->
+  <!-- MAIN CONTENT -->
   <div class="main-container">
-    <h1 class="page-title">Real-time Occupancy</h1>
-
-    <!-- Tabs -->
+    <h1 class="page-title" style="color:#fff">Real-time Occupancy</h1>
+    
+    <!-- TABS -->
     <div class="tabs">
       <button class="tab-button active" onclick="showTab('liveVacancy', event)">Live Vacancy</button>
       <button class="tab-button" onclick="showTab('timeTable', event)">Time Table</button>
       <button class="tab-button" onclick="showTab('dataAnalysis', event)">Data Analysis</button>
     </div>
-
-    <!-- Live Vacancy Section -->
+    
+    <!-- LIVE VACANCY SECTION -->
     <div id="liveVacancy" class="tab-content active">
       <div class="sport-selector">
-        <label for="sportSelect">Select Sport:</label>
+        <label for="sportSelect" style="color:#fff">Select Sport:</label>
         <select id="sportSelect" onchange="updateLiveVacancy()">
           <option value="badminton">Badminton</option>
           <option value="gym">Gym</option>
@@ -113,50 +91,48 @@
           <option value="lawntennis">Lawn Tennis</option>
         </select>
       </div>
-
       <div class="occupancy-display">
         <!-- Occupancy Card -->
         <div class="occupancy-card">
           <div class="occupancy-header">
-            <h2 id="sportTitle">Badminton</h2>
+            <h2 id="sportTitle" style="color:#0782da">Badminton</h2>
             <span class="status-badge available">Available</span>
           </div>
           <div class="occupancy-details">
             <div class="detail-item">
               <i class="fas fa-users"></i>
               <div class="detail-info">
-                <span class="detail-label">Students Present</span>
+                <span class="detail-label" style="color:#0782da">Students Present</span>
                 <span id="studentCount" class="detail-value">4</span>
               </div>
             </div>
             <div class="detail-item">
               <i class="fas fa-percentage"></i>
               <div class="detail-info">
-                <span class="detail-label">Occupancy Rate</span>
+                <span class="detail-label" style="color:#0782da">Occupancy Rate</span>
                 <span id="occupancyRate" class="detail-value">40%</span>
               </div>
             </div>
           </div>
-          <h3>Equipment in Use</h3>
+          <h3 style="color:#0782da">Equipment in Use</h3>
           <div class="equipment-list" id="equipmentList">
-            <!-- Dynamically updated -->
+            <!-- Updated dynamically -->
           </div>
         </div>
-
         <!-- Court Visualization -->
         <div class="court-visualization">
-          <h3>Court Visualization</h3>
+          <h3 style="color:#0782da">Court Visualization</h3>
           <div class="court-container" id="courtContainer">
-            <!-- Dynamically updated with pitch markings -->
+            <!-- Injected by JS -->
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Time Table Section -->
+    
+    <!-- TIME TABLE SECTION -->
     <div id="timeTable" class="tab-content">
       <div class="sport-selector">
-        <label for="timeTableSportSelect">Select Sport:</label>
+        <label for="timeTableSportSelect" style="color:#fff">Select Sport:</label>
         <select id="timeTableSportSelect" onchange="updateTimeTable()">
           <option value="badminton">Badminton</option>
           <option value="gym">Gym</option>
@@ -168,9 +144,8 @@
           <option value="lawntennis">Lawn Tennis</option>
         </select>
       </div>
-
       <div class="timetable-container">
-        <h2 id="timeTableSportTitle">Badminton - Weekly Schedule</h2>
+        <h2 id="timeTableSportTitle" style="color:#0782da">Badminton - Weekly Schedule</h2>
         <div class="timetable">
           <div class="timetable-header">
             <div class="time-column">06:00 - 08:00</div>
@@ -183,24 +158,24 @@
             <div class="day-column">Sunday</div>
           </div>
           <div class="timetable-body" id="timetableBody">
-            <!-- Example time rows with original color-coded slots -->
+            <!-- Full timetable details -->
             <div class="time-row">
               <div class="time-column">06:00 - 08:00</div>
-              <div class="day-column faculty">Faculty</div>
+              <div class="day-column faculty" style="color:#0782da">Faculty</div>
               <div class="day-column">-</div>
-              <div class="day-column faculty">Faculty</div>
+              <div class="day-column faculty" style="color:#0782da">Faculty</div>
               <div class="day-column">-</div>
-              <div class="day-column faculty">Faculty</div>
+              <div class="day-column faculty" style="color:#0782da">Faculty</div>
               <div class="day-column">-</div>
               <div class="day-column">-</div>
             </div>
             <div class="time-row">
               <div class="time-column">08:00 - 10:00</div>
-              <div class="day-column girls">Girls</div>
-              <div class="day-column team">College Team</div>
-              <div class="day-column girls">Girls</div>
-              <div class="day-column team">College Team</div>
-              <div class="day-column girls">Girls</div>
+              <div class="day-column girls" style="color:#0782da">Girls</div>
+              <div class="day-column team" style="color:#0782da">College Team</div>
+              <div class="day-column girls" style="color:#0782da">Girls</div>
+              <div class="day-column team" style="color:#0782da">College Team</div>
+              <div class="day-column girls" style="color:#0782da">Girls</div>
               <div class="day-column open">Open</div>
               <div class="day-column open">Open</div>
             </div>
@@ -211,8 +186,8 @@
               <div class="day-column open">Open</div>
               <div class="day-column open">Open</div>
               <div class="day-column open">Open</div>
-              <div class="day-column mtech">MTech/PhD</div>
-              <div class="day-column mtech">MTech/PhD</div>
+              <div class="day-column mtech" style="color:#0782da">MTech/PhD</div>
+              <div class="day-column mtech" style="color:#0782da">MTech/PhD</div>
             </div>
             <div class="time-row">
               <div class="time-column">12:00 - 14:00</div>
@@ -231,26 +206,26 @@
               <div class="day-column open">Open</div>
               <div class="day-column open">Open</div>
               <div class="day-column open">Open</div>
-              <div class="day-column team">College Team</div>
-              <div class="day-column team">College Team</div>
+              <div class="day-column team" style="color:#0782da">College Team</div>
+              <div class="day-column team" style="color:#0782da">College Team</div>
             </div>
             <div class="time-row">
               <div class="time-column">16:00 - 18:00</div>
-              <div class="day-column team">College Team</div>
-              <div class="day-column girls">Girls</div>
-              <div class="day-column team">College Team</div>
-              <div class="day-column girls">Girls</div>
-              <div class="day-column team">College Team</div>
+              <div class="day-column team" style="color:#0782da">College Team</div>
+              <div class="day-column girls" style="color:#0782da">Girls</div>
+              <div class="day-column team" style="color:#0782da">College Team</div>
+              <div class="day-column girls" style="color:#0782da">Girls</div>
+              <div class="day-column team" style="color:#0782da">College Team</div>
               <div class="day-column open">Open</div>
               <div class="day-column open">Open</div>
             </div>
             <div class="time-row">
               <div class="time-column">18:00 - 20:00</div>
-              <div class="day-column mtech">MTech/PhD</div>
-              <div class="day-column mtech">MTech/PhD</div>
-              <div class="day-column mtech">MTech/PhD</div>
-              <div class="day-column mtech">MTech/PhD</div>
-              <div class="day-column mtech">MTech/PhD</div>
+              <div class="day-column mtech" style="color:#0782da">MTech/PhD</div>
+              <div class="day-column mtech" style="color:#0782da">MTech/PhD</div>
+              <div class="day-column mtech" style="color:#0782da">MTech/PhD</div>
+              <div class="day-column mtech" style="color:#0782da">MTech/PhD</div>
+              <div class="day-column mtech" style="color:#0782da">MTech/PhD</div>
               <div class="day-column open">Open</div>
               <div class="day-column open">Open</div>
             </div>
@@ -266,36 +241,35 @@
             </div>
           </div>
         </div>
-
         <div class="timetable-legend">
           <div class="legend-item">
             <span class="legend-color faculty"></span>
-            <span class="legend-text">Faculty</span>
+            <span class="legend-text" style="color:#0782da">Faculty</span>
           </div>
           <div class="legend-item">
             <span class="legend-color team"></span>
-            <span class="legend-text">College Team</span>
+            <span class="legend-text" style="color:#0782da">College Team</span>
           </div>
           <div class="legend-item">
             <span class="legend-color girls"></span>
-            <span class="legend-text">Girls</span>
+            <span class="legend-text" style="color:#0782da">Girls</span>
           </div>
           <div class="legend-item">
             <span class="legend-color mtech"></span>
-            <span class="legend-text">MTech/PhD</span>
+            <span class="legend-text" style="color:#0782da">MTech/PhD</span>
           </div>
           <div class="legend-item">
             <span class="legend-color open"></span>
-            <span class="legend-text">Open</span>
+            <span class="legend-text" style="color:#0782da">Open</span>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Data Analysis Section -->
+    
+    <!-- DATA ANALYSIS SECTION -->
     <div id="dataAnalysis" class="tab-content">
       <div class="sport-selector">
-        <label for="analysisSportSelect">Select Sport:</label>
+        <label for="analysisSportSelect" style="color:#fff">Select Sport:</label>
         <select id="analysisSportSelect" onchange="updateAnalysisCharts()">
           <option value="badminton">Badminton</option>
           <option value="gym">Gym</option>
@@ -307,38 +281,37 @@
           <option value="lawntennis">Lawn Tennis</option>
         </select>
       </div>
-
       <div class="analysis-container">
         <div class="chart-container">
-          <h3>Weekly Attendance</h3>
+          <h3 style="color:#fff">Weekly Attendance</h3>
           <canvas id="weeklyChart"></canvas>
         </div>
         <div class="chart-container">
-          <h3>Monthly Attendance</h3>
+          <h3 style="color:#fff">Monthly Attendance</h3>
           <canvas id="monthlyChart"></canvas>
         </div>
         <div class="chart-container">
-          <h3>Peak Hours (Last 30 Days)</h3>
+          <h3 style="color:#fff">Peak Hours (Last 30 Days)</h3>
           <canvas id="peakHoursChart"></canvas>
         </div>
         <div class="stats-container">
-          <h3>Usage Statistics</h3>
+          <h3 style="color:#fff">Usage Statistics</h3>
           <div class="stats-grid">
             <div class="stat-card">
               <div class="stat-value" id="totalUsers">245</div>
-              <div class="stat-label">Total Users This Month</div>
+              <div class="stat-label" style="color:#0782da">Total Users This Month</div>
             </div>
             <div class="stat-card">
               <div class="stat-value" id="avgDuration">1.5</div>
-              <div class="stat-label">Average Session (hours)</div>
+              <div class="stat-label" style="color:#0782da">Average Session (hours)</div>
             </div>
             <div class="stat-card">
               <div class="stat-value" id="peakDay">Friday</div>
-              <div class="stat-label">Most Popular Day</div>
+              <div class="stat-label" style="color:#0782da">Most Popular Day</div>
             </div>
             <div class="stat-card">
               <div class="stat-value" id="peakTime">18:00</div>
-              <div class="stat-label">Peak Time</div>
+              <div class="stat-label" style="color:#0782da">Peak Time</div>
             </div>
           </div>
         </div>
@@ -346,12 +319,12 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-content">
       <div class="footer-links">
         <div class="footer-column">
-          <h4>Platform</h4>
+          <h4 style="color:#0782da">Platform</h4>
           <ul>
             <li><a href="#">Scan</a></li>
             <li><a href="#">Sports</a></li>
@@ -360,7 +333,7 @@
           </ul>
         </div>
         <div class="footer-column">
-          <h4>Features</h4>
+          <h4 style="color:#0782da">Features</h4>
           <ul>
             <li><a href="occupancy.html">Occupancy</a></li>
             <li><a href="playersearch.html">Player Search</a></li>
@@ -369,7 +342,7 @@
           </ul>
         </div>
         <div class="footer-column">
-          <h4>Resources</h4>
+          <h4 style="color:#0782da">Resources</h4>
           <ul>
             <li><a href="#">Help Center</a></li>
             <li><a href="#">Community</a></li>
@@ -378,7 +351,7 @@
           </ul>
         </div>
         <div class="footer-column">
-          <h4>Company</h4>
+          <h4 style="color:#0782da">Company</h4>
           <ul>
             <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">About Us</a></li>
             <li><a href="#">Careers</a></li>
@@ -394,53 +367,35 @@
         <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
       </div>
     </div>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- JAVASCRIPT -->
   <script>
-    // Mobile Menu Toggle
-    const menuIcon = document.getElementById('menuIcon');
-    const menuBar = document.getElementById('menuBar');
-    const menuClose = document.getElementById('menuClose');
+    // Sidebar Toggle (same as occupancy page)
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarClose = document.getElementById('sidebarClose');
 
-    menuIcon.addEventListener('click', () => {
-      menuBar.classList.add('active');
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('expanded');
+    });
+    sidebarClose.addEventListener('click', () => {
+      sidebar.classList.remove('expanded');
     });
 
-    menuClose.addEventListener('click', () => {
-      menuBar.classList.remove('active');
-    });
-
-    // Toggle submenus
-    const menuParents = document.querySelectorAll('.menu-bar .menu-parent > a');
-    menuParents.forEach(parentLink => {
-      parentLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        const parentLi = e.target.parentElement;
-        parentLi.classList.toggle('active');
-      });
-    });
-
-    // Tab switching functionality
+    // Tab Switching Functionality
     function showTab(tabId, event) {
-      const tabContents = document.querySelectorAll('.tab-content');
-      tabContents.forEach(content => content.classList.remove('active'));
-
-      const tabButtons = document.querySelectorAll('.tab-button');
-      tabButtons.forEach(button => button.classList.remove('active'));
-
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
       document.getElementById(tabId).classList.add('active');
       event.target.classList.add('active');
-
-      if (tabId === 'dataAnalysis') {
-        initializeCharts();
-      }
+      if (tabId === 'dataAnalysis') initializeCharts();
     }
 
-    // Sports Data with Court Markings
+    // Sample sports data for demonstration purposes (expanded for all options)
     const sportsData = {
       badminton: {
         title: 'Badminton',
@@ -486,27 +441,22 @@
       },
       cricket: {
         title: 'Cricket',
-        students: 22,
-        capacity: 22,
+        students: 11,
+        capacity: 11,
         equipment: [
           { name: 'Bats', count: 2 },
-          { name: 'Balls', count: 3 },
-          { name: 'Wickets', count: 1 },
-          { name: 'Helmets', count: 2 }
+          { name: 'Balls', count: 5 },
+          { name: 'Wickets', count: 1 }
         ],
         courtType: 'cricket-field',
-        players: Array.from({ length: 22 }, (_, i) => {
-          const angle = (i / 22) * 2 * Math.PI;
-          const radius = 40;
-          const top = 50 + radius * Math.sin(angle);
-          const left = 50 + radius * Math.cos(angle);
-          return { top: `${top}%`, left: `${left}%` };
+        players: Array.from({ length: 11 }, (_, i) => {
+          return { top: `${20 + i*5}%`, left: `${20 + i*5}%` };
         })
       },
       football: {
         title: 'Football',
         students: 14,
-        capacity: 22,
+        capacity: 18,
         equipment: [
           { name: 'Balls', count: 2 },
           { name: 'Cones', count: 8 },
@@ -514,12 +464,7 @@
         ],
         courtType: 'football-field',
         players: Array.from({ length: 14 }, (_, i) => {
-          const row = Math.floor(i / 7);
-          const col = i % 7;
-          return {
-            top: `${20 + row * 50}%`,
-            left: `${10 + col * 13}%`
-          };
+          return { top: `${10 + i*3}%`, left: `${10 + i*3}%` };
         })
       },
       basketball: {
@@ -532,12 +477,7 @@
         ],
         courtType: 'basketball-court',
         players: Array.from({ length: 8 }, (_, i) => {
-          const row = Math.floor(i / 4);
-          const col = i % 4;
-          return {
-            top: `${20 + row * 50}%`,
-            left: `${20 + col * 20}%`
-          };
+          return { top: `${20 + (i%2)*50}%`, left: `${20 + (i%4)*20}%` };
         })
       },
       volleyball: {
@@ -550,12 +490,7 @@
         ],
         courtType: 'volleyball-court',
         players: Array.from({ length: 10 }, (_, i) => {
-          const row = Math.floor(i / 5);
-          const col = i % 5;
-          return {
-            top: `${30 + row * 40}%`,
-            left: `${10 + col * 20}%`
-          };
+          return { top: `${30 + (i%2)*40}%`, left: `${10 + (i%5)*20}%` };
         })
       },
       tabletennis: {
@@ -596,75 +531,53 @@
 
     function updateLiveVacancy() {
       const sportSelect = document.getElementById('sportSelect');
-      const selectedSport = sportSelect.value;
-      const sportData = sportsData[selectedSport];
+      const selected = sportSelect.value;
+      const data = sportsData[selected] || sportsData.badminton;
+      document.getElementById('sportTitle').textContent = data.title;
+      document.getElementById('studentCount').textContent = data.students;
+      const rate = Math.round((data.students / data.capacity) * 100);
+      document.getElementById('occupancyRate').textContent = rate + '%';
 
-      // Update title and counts
-      document.getElementById('sportTitle').textContent = sportData.title;
-      document.getElementById('studentCount').textContent = sportData.students;
-      const occupancyRate = Math.round((sportData.students / sportData.capacity) * 100);
-      document.getElementById('occupancyRate').textContent = `${occupancyRate}%`;
-
-      // Update equipment list
-      const equipmentList = document.getElementById('equipmentList');
-      equipmentList.innerHTML = '';
-      sportData.equipment.forEach(item => {
-        const equipmentItem = document.createElement('div');
-        equipmentItem.className = 'equipment-item';
-        equipmentItem.innerHTML = `
-          <span class="equipment-name">${item.name}</span>
-          <span class="equipment-count">${item.count}</span>
-        `;
-        equipmentList.appendChild(equipmentItem);
+      const eqList = document.getElementById('equipmentList');
+      eqList.innerHTML = '';
+      data.equipment.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'equipment-item';
+        div.innerHTML = `<span class="equipment-name">${item.name}</span>
+                         <span class="equipment-count">${item.count}</span>`;
+        eqList.appendChild(div);
       });
 
-      // Update court visualization
       const courtContainer = document.getElementById('courtContainer');
       courtContainer.innerHTML = '';
       const court = document.createElement('div');
-      court.className = `court ${sportData.courtType}`;
-      sportData.players.forEach((player, index) => {
-        const playerElement = document.createElement('div');
-        playerElement.className = 'court-player';
-        playerElement.style.top = player.top;
-        playerElement.style.left = player.left;
-        playerElement.title = `Player ${index + 1}`;
-        court.appendChild(playerElement);
+      court.className = 'court ' + data.courtType;
+      data.players.forEach(p => {
+        const playerEl = document.createElement('div');
+        playerEl.className = 'court-player';
+        playerEl.style.top = p.top;
+        playerEl.style.left = p.left;
+        court.appendChild(playerEl);
       });
       courtContainer.appendChild(court);
-
-      // Update status badge
-      const statusBadge = document.querySelector('.status-badge');
-      if (occupancyRate >= 90) {
-        statusBadge.className = 'status-badge full';
-        statusBadge.textContent = 'Full';
-      } else if (occupancyRate >= 70) {
-        statusBadge.className = 'status-badge busy';
-        statusBadge.textContent = 'Busy';
-      } else {
-        statusBadge.className = 'status-badge available';
-        statusBadge.textContent = 'Available';
-      }
     }
 
     function updateTimeTable() {
       const sportSelect = document.getElementById('timeTableSportSelect');
-      const selectedSport = sportSelect.value;
-      document.getElementById('timeTableSportTitle').textContent = `${sportsData[selectedSport].title} - Weekly Schedule`;
-      console.log(`Timetable updated for ${selectedSport}`);
+      const selected = sportSelect.value;
+      document.getElementById('timeTableSportTitle').textContent = `${sportsData[selected].title} - Weekly Schedule`;
     }
 
     let weeklyChart, monthlyChart, peakHoursChart;
-
     function initializeCharts() {
       const weeklyCtx = document.getElementById('weeklyChart').getContext('2d');
       weeklyChart = new Chart(weeklyCtx, {
         type: 'bar',
         data: {
-          labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
           datasets: [{
             label: 'Students',
-            data: [25, 32, 28, 35, 42, 38, 30],
+            data: [25,32,28,35,42,38,30],
             backgroundColor: '#0782da',
             borderColor: '#0782da',
             borderWidth: 1
@@ -673,19 +586,10 @@
         options: {
           responsive: true,
           scales: {
-            y: {
-              beginAtZero: true,
-              grid: { color: 'rgba(255, 255, 255, 0.1)' },
-              ticks: { color: '#cccccc' }
-            },
-            x: {
-              grid: { color: 'rgba(255, 255, 255, 0.1)' },
-              ticks: { color: '#cccccc' }
-            }
+            y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#cccccc' } },
+            x: { grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#cccccc' } }
           },
-          plugins: {
-            legend: { labels: { color: '#ffffff' } }
-          }
+          plugins: { legend: { labels: { color: '#ffffff' } } }
         }
       });
 
@@ -693,11 +597,11 @@
       monthlyChart = new Chart(monthlyCtx, {
         type: 'line',
         data: {
-          labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+          labels: ['Week 1','Week 2','Week 3','Week 4'],
           datasets: [{
             label: 'Students',
-            data: [120, 145, 135, 160],
-            backgroundColor: 'rgba(7, 130, 218, 0.2)',
+            data: [120,145,135,160],
+            backgroundColor: 'rgba(7,130,218,0.2)',
             borderColor: '#0782da',
             borderWidth: 2,
             tension: 0.3,
@@ -707,30 +611,21 @@
         options: {
           responsive: true,
           scales: {
-            y: {
-              beginAtZero: true,
-              grid: { color: 'rgba(255, 255, 255, 0.1)' },
-              ticks: { color: '#cccccc' }
-            },
-            x: {
-              grid: { color: 'rgba(255, 255, 255, 0.1)' },
-              ticks: { color: '#cccccc' }
-            }
+            y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#cccccc' } },
+            x: { grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#cccccc' } }
           },
-          plugins: {
-            legend: { labels: { color: '#ffffff' } }
-          }
+          plugins: { legend: { labels: { color: '#ffffff' } } }
         }
       });
 
-      const peakHoursCtx = document.getElementById('peakHoursChart').getContext('2d');
-      peakHoursChart = new Chart(peakHoursCtx, {
+      const peakCtx = document.getElementById('peakHoursChart').getContext('2d');
+      peakHoursChart = new Chart(peakCtx, {
         type: 'bar',
         data: {
-          labels: ['06-08', '08-10', '10-12', '12-14', '14-16', '16-18', '18-20', '20-22'],
+          labels: ['06-08','08-10','10-12','12-14','14-16','16-18','18-20','20-22'],
           datasets: [{
             label: 'Average Users',
-            data: [8, 15, 12, 5, 18, 25, 30, 20],
+            data: [8,15,12,5,18,25,30,20],
             backgroundColor: '#0782da',
             borderColor: '#0782da',
             borderWidth: 1
@@ -739,52 +634,40 @@
         options: {
           responsive: true,
           scales: {
-            y: {
-              beginAtZero: true,
-              grid: { color: 'rgba(255, 255, 255, 0.1)' },
-              ticks: { color: '#cccccc' }
-            },
-            x: {
-              grid: { color: 'rgba(255, 255, 255, 0.1)' },
-              ticks: { color: '#cccccc' }
-            }
+            y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#cccccc' } },
+            x: { grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#cccccc' } }
           },
-          plugins: {
-            legend: { labels: { color: '#ffffff' } }
-          }
+          plugins: { legend: { labels: { color: '#ffffff' } } }
         }
       });
     }
 
-    function updateAnalysisCharts() {
-      const sportSelect = document.getElementById('analysisSportSelect');
-      const selectedSport = sportSelect.value;
+    // Countdown Timer (Starts from 1 Hour)
+    function startCountdown(duration, display) {
+      let timer = duration, hours, minutes, seconds;
+      setInterval(function () {
+          hours = parseInt(timer / 3600, 10);
+          minutes = parseInt((timer % 3600) / 60, 10);
+          seconds = parseInt(timer % 60, 10);
 
-      const weeklyData = Array.from({ length: 7 }, () => Math.floor(Math.random() * 30) + 10);
-      weeklyChart.data.datasets[0].data = weeklyData;
-      weeklyChart.update();
+          hours = hours < 10 ? "0" + hours : hours;
+          minutes = minutes < 10 ? "0" + minutes : minutes;
+          seconds = seconds < 10 ? "0" + seconds : seconds;
 
-      const monthlyData = Array.from({ length: 4 }, () => Math.floor(Math.random() * 50) + 100);
-      monthlyChart.data.datasets[0].data = monthlyData;
-      monthlyChart.update();
+          display.textContent = hours + ":" + minutes + ":" + seconds;
 
-      const peakHoursData = Array.from({ length: 8 }, () => Math.floor(Math.random() * 25) + 5);
-      peakHoursChart.data.datasets[0].data = peakHoursData;
-      peakHoursChart.update();
-
-      document.getElementById('totalUsers').textContent = Math.floor(Math.random() * 200) + 100;
-      document.getElementById('avgDuration').textContent = (Math.random() * 2 + 0.5).toFixed(1);
-
-      const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-      const randomDay = days[Math.floor(Math.random() * days.length)];
-      document.getElementById('peakDay').textContent = randomDay;
-
-      const hours = ['10:00', '14:00', '16:00', '18:00', '20:00'];
-      const randomHour = hours[Math.floor(Math.random() * hours.length)];
-      document.getElementById('peakTime').textContent = randomHour;
+          if (--timer < 0) {
+              timer = 0;
+          }
+      }, 1000);
     }
+    window.onload = function () {
+      let oneHour = 60 * 60; // 1 hour in seconds
+      let display = document.getElementById('countdown-timer');
+      startCountdown(oneHour, display);
+    };
 
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', () => {
       showTab('liveVacancy', { target: document.querySelector('.tab-button.active') });
       updateLiveVacancy();
       updateTimeTable();

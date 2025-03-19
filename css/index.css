@@ -1,11 +1,9 @@
 /* =====================================
    Index Page Specific Styles
-   (QR, Timer, Features, Testimonials)
-====================================== */
+   (QR, Timer, Features, Testimonials, etc.)
+===================================== */
 
-/* -------------------------------------
-   QR Code, Timer & Booking Details Section
-------------------------------------- */
+/* ---------- QR CODE, TIMER & BOOKING DETAILS ---------- */
 .qr-player-section {
   background-color: transparent;
   padding: 40px 0;
@@ -83,7 +81,7 @@
   padding: 10px;
   border-radius: 5px;
   background-color: #0c1422;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
   margin-bottom: 5px;
 }
 
@@ -110,9 +108,7 @@
   color: #fff;
 }
 
-/* -------------------------------------
-   Features Section (Cards)
-------------------------------------- */
+/* ---------- FEATURES SECTION (Cards) ---------- */
 .cards-section {
   padding: 60px 0;
 }
@@ -124,6 +120,7 @@
   color: #fff;
 }
 
+/* Feature cards now have background matching testimonials (#192a45) */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -131,7 +128,7 @@
 }
 
 .card {
-  background-color: #27303f;
+  background-color: #192a45;
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -143,18 +140,16 @@
   transform: translateY(-10px);
 }
 
+/* Ensure the card image covers the full top section */
 .card-image {
   height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #1a1a1a;
+  overflow: hidden;
 }
 
 .card-image img {
-  max-width: 80px;
-  max-height: 80px;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.5s ease;
 }
 
@@ -177,9 +172,7 @@
   font-size: 0.95rem;
 }
 
-/* -------------------------------------
-   Testimonials Section
-------------------------------------- */
+/* ---------- TESTIMONIALS SECTION ---------- */
 .testimonials-section {
   padding: 60px 0;
 }
@@ -197,7 +190,7 @@
   border-radius: 8px;
   padding: 20px;
   transition: transform 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .testimonial-card:hover {
@@ -226,4 +219,40 @@
   color: #cfcfcf;
   font-size: 0.95rem;
   line-height: 1.4;
+}
+
+/* =====================================
+   Responsive Adjustments for Index Page
+===================================== */
+@media (max-width: 768px) {
+  .header-content {
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+  }
+  .menu-btn {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+  }
+  .header-center {
+    margin-top: 40px;
+  }
+  .header-right {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+  }
+  .qr-player-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .occupancy-details {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .detail-item {
+    margin: 0 auto 15px;
+    min-width: unset;
+  }
 }
