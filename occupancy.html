@@ -21,7 +21,12 @@
             <li><a href="index.html">Scan</a></li>
             <li><a href="index.html">Sports</a></li>
             <li><a href="#">Leaderboard</a></li>
-            <li><a href="live_scoring.html">Live Scoring</a></li>
+            <li>
+              <a href="live_scoring.html">Live Scoring</a>
+              <ul>
+                <li><a href="cointoss.html">Coin Toss</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li>
@@ -45,9 +50,9 @@
         <li>
           <span>Company</span>
           <ul>
-            <li><a href="#">About Us</a></li>
+            <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">About Us</a></li>
             <li><a href="#">Careers</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">Contact</a></li>
             <li><a href="#">Privacy Policy</a></li>
           </ul>
         </li>
@@ -68,13 +73,7 @@
           <span class="logo-text">SportsBook</span>
         </a>
       </div>
-      <nav class="main-nav">
-        <ul>
-          <li class="dropdown"><a href="#">Sports <i class="fas fa-chevron-down"></i></a></li>
-          <li class="dropdown"><a href="#">Live Scoring <i class="fas fa-chevron-down"></i></a></li>
-          <li class="dropdown"><a href="#">Coin Toss <i class="fas fa-chevron-down"></i></a></li>
-        </ul>
-      </nav>
+      <!-- Main navigation removed for mobile simplicity -->
       <div class="header-right">
         <a href="#" class="login-btn">Log in <i class="fas fa-chevron-down"></i></a>
       </div>
@@ -87,9 +86,9 @@
     
     <!-- Tabs -->
     <div class="tabs">
-      <button class="tab-button active" onclick="showTab('liveVacancy')">Live Vacancy</button>
-      <button class="tab-button" onclick="showTab('timeTable')">Time Table</button>
-      <button class="tab-button" onclick="showTab('dataAnalysis')">Data Analysis</button>
+      <button class="tab-button active" onclick="showTab('liveVacancy', event)">Live Vacancy</button>
+      <button class="tab-button" onclick="showTab('timeTable', event)">Time Table</button>
+      <button class="tab-button" onclick="showTab('dataAnalysis', event)">Data Analysis</button>
     </div>
     
     <!-- Live Vacancy Section -->
@@ -133,26 +132,14 @@
           
           <h3>Equipment in Use</h3>
           <div class="equipment-list" id="equipmentList">
-            <div class="equipment-item">
-              <span class="equipment-name">Racquets</span>
-              <span class="equipment-count">4</span>
-            </div>
-            <div class="equipment-item">
-              <span class="equipment-name">Shuttlecocks</span>
-              <span class="equipment-count">1</span>
-            </div>
+            <!-- Equipment items updated dynamically -->
           </div>
         </div>
         
         <div class="court-visualization">
           <h3>Court Visualization</h3>
           <div class="court-container" id="courtContainer">
-            <div class="court badminton-court">
-              <div class="court-player" style="top: 20%; left: 20%;" title="Player 1"></div>
-              <div class="court-player" style="top: 20%; left: 70%;" title="Player 2"></div>
-              <div class="court-player" style="top: 70%; left: 20%;" title="Player 3"></div>
-              <div class="court-player" style="top: 70%; left: 70%;" title="Player 4"></div>
-            </div>
+            <!-- Court visualization updated dynamically -->
           </div>
         </div>
       </div>
@@ -188,7 +175,7 @@
             <div class="day-column">Sunday</div>
           </div>
           <div class="timetable-body" id="timetableBody">
-            <!-- Example time rows -->
+            <!-- Time rows (static content or dynamically updated) -->
             <div class="time-row">
               <div class="time-column">6:00 - 8:00</div>
               <div class="day-column faculty">Faculty</div>
@@ -364,16 +351,16 @@
             <li><a href="#">Scan</a></li>
             <li><a href="#">Sports</a></li>
             <li><a href="#">Leaderboard</a></li>
-            <li><a href="#">Live Scoring</a></li>
+            <li><a href="live_scoring.html">Live Scoring</a></li>
           </ul>
         </div>
         <div class="footer-column">
           <h4>Features</h4>
           <ul>
-            <li><a href="#">Occupancy</a></li>
-            <li><a href="#">Player Search</a></li>
-            <li><a href="#">Booking</a></li>
-            <li><a href="#">Others</a></li>
+            <li><a href="occupancy.html">Occupancy</a></li>
+            <li><a href="playersearch.html">Player Search</a></li>
+            <li><a href="bookingsystem.html">Booking</a></li>
+            <li><a href="others.html">Others</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -388,9 +375,9 @@
         <div class="footer-column">
           <h4>Company</h4>
           <ul>
-            <li><a href="#">About Us</a></li>
+            <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">About Us</a></li>
             <li><a href="#">Careers</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">Contact</a></li>
             <li><a href="#">Privacy Policy</a></li>
           </ul>
         </div>
@@ -421,8 +408,8 @@
       mobileMenu.classList.remove('active');
     });
 
-    // Tab switching functionality
-    function showTab(tabId) {
+    // Tab switching functionality – note we pass event to correctly set active class
+    function showTab(tabId, event) {
       const tabContents = document.querySelectorAll('.tab-content');
       tabContents.forEach(content => content.classList.remove('active'));
       
@@ -437,7 +424,7 @@
       }
     }
 
-    // Live Vacancy and Timetable update functions (using sample sportsData)
+    // Full sportsData object (original content)
     const sportsData = {
       badminton: {
         title: 'Badminton',
@@ -481,7 +468,114 @@
           { top: '70%', left: '45%' }
         ]
       },
-      // Additional sports data...
+      cricket: {
+        title: 'Cricket',
+        students: 22,
+        capacity: 22,
+        equipment: [
+          { name: 'Bats', count: 2 },
+          { name: 'Balls', count: 3 },
+          { name: 'Wickets', count: 1 },
+          { name: 'Helmets', count: 2 }
+        ],
+        courtType: 'cricket-field',
+        players: Array.from({ length: 22 }, (_, i) => {
+          const angle = (i / 22) * 2 * Math.PI;
+          const radius = 40;
+          const top = 50 + radius * Math.sin(angle);
+          const left = 50 + radius * Math.cos(angle);
+          return { top: `${top}%`, left: `${left}%` };
+        })
+      },
+      football: {
+        title: 'Football',
+        students: 14,
+        capacity: 22,
+        equipment: [
+          { name: 'Balls', count: 2 },
+          { name: 'Cones', count: 8 },
+          { name: 'Bibs', count: 7 }
+        ],
+        courtType: 'football-field',
+        players: Array.from({ length: 14 }, (_, i) => {
+          const row = Math.floor(i / 7);
+          const col = i % 7;
+          return { 
+            top: `${20 + row * 50}%`, 
+            left: `${10 + col * 13}%` 
+          };
+        })
+      },
+      basketball: {
+        title: 'Basketball',
+        students: 8,
+        capacity: 10,
+        equipment: [
+          { name: 'Balls', count: 2 },
+          { name: 'Bibs', count: 4 }
+        ],
+        courtType: 'basketball-court',
+        players: Array.from({ length: 8 }, (_, i) => {
+          const row = Math.floor(i / 4);
+          const col = i % 4;
+          return { 
+            top: `${20 + row * 50}%`, 
+            left: `${20 + col * 20}%` 
+          };
+        })
+      },
+      volleyball: {
+        title: 'Volleyball',
+        students: 10,
+        capacity: 12,
+        equipment: [
+          { name: 'Balls', count: 2 },
+          { name: 'Net', count: 1 }
+        ],
+        courtType: 'volleyball-court',
+        players: Array.from({ length: 10 }, (_, i) => {
+          const row = Math.floor(i / 5);
+          const col = i % 5;
+          return { 
+            top: `${30 + row * 40}%`, 
+            left: `${10 + col * 20}%` 
+          };
+        })
+      },
+      tabletennis: {
+        title: 'Table Tennis',
+        students: 4,
+        capacity: 8,
+        equipment: [
+          { name: 'Paddles', count: 4 },
+          { name: 'Balls', count: 2 },
+          { name: 'Tables', count: 2 }
+        ],
+        courtType: 'tabletennis-area',
+        players: [
+          { top: '25%', left: '25%' },
+          { top: '25%', left: '75%' },
+          { top: '75%', left: '25%' },
+          { top: '75%', left: '75%' }
+        ]
+      },
+      lawntennis: {
+        title: 'Lawn Tennis',
+        students: 4,
+        capacity: 4,
+        equipment: [
+          { name: 'Racquets', count: 4 },
+          { name: 'Balls', count: 3 },
+          { name: 'Net', count: 1 }
+        ],
+        courtType: 'tennis-court',
+        players: [
+          { top: '20%', left: '20%' },
+          { top: '20%', left: '80%' },
+          { top: '80%', left: '20%' },
+          { top: '80%', left: '80%' }
+        ]
+      }
     };
 
     function updateLiveVacancy() {
@@ -671,11 +765,10 @@
     }
     
     document.addEventListener('DOMContentLoaded', function() {
-      showTab('liveVacancy');
+      showTab('liveVacancy', { target: document.querySelector('.tab-button.active') });
       updateLiveVacancy();
       updateTimeTable();
     });
   </script>
 </body>
 </html>
-x
