@@ -1,180 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SportsBook - Sports Facility Management</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sports Platform</title>
+  <!-- Styles & FontAwesome -->
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
 </head>
 <body>
-    <header class="header">
-        <div class="container header-container">
-            <div class="logo-container">
-                <img src="sportsBook_logo.png" alt="SportsBook Logo" class="logo">
-                <h1 class="logo-text">SportsBook</h1>
-            </div>
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="#" class="nav-link">Sports <i data-lucide="chevron-down"></i></a></li>
-                    <li class="nav-item"><a href="live_scoring.html" class="nav-link">Live Scoring <i data-lucide="chevron-down"></i></a></li>
-                    <li class="nav-item"><a href="cointoss.html" class="nav-link">Coin Toss <i data-lucide="chevron-down"></i></a></li>
-                </ul>
-            </nav>
-            <div class="auth-buttons">
-                <a href="#" class="btn btn-primary">Log in <i data-lucide="chevron-down"></i></a>
-            </div>
+  <!-- Mobile Menu (Hidden by default) -->
+  <nav class="mobile-menu">
+    <div class="mobile-menu-content">
+      <ul>
+        <li>
+          <span>Platform</span>
+          <ul>
+            <li><a href="#">Scan</a></li>
+            <li><a href="#">Sports</a></li>
+            <li><a href="#">Leaderboard</a></li>
+            <li><a href="#">Live Scoring</a></li>
+          </ul>
+        </li>
+        <li>
+          <span>Features</span>
+          <ul>
+            <li><a href="#">Occupancy</a></li>
+            <li><a href="#">Player Search</a></li>
+            <li><a href="#">Booking</a></li>
+            <li><a href="#">Others</a></li>
+          </ul>
+        </li>
+        <li>
+          <span>Resources</span>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </li>
+        <li>
+          <span>Company</span>
+          <ul>
+            <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </li>
+      </ul>
+      <button class="mobile-menu-close"><i class="fas fa-times"></i></button>
+    </div>
+  </nav>
+
+  <!-- Header Section -->
+  <header>
+    <div class="header-content container">
+      <!-- Hamburger Menu Icon -->
+      <div class="menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <img
+            src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true"
+            alt="SportsBook Logo"
+            class="header-logo"
+          />
+          <span class="logo-text">SportsBook</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li class="dropdown">
+            <a href="#">Sports <i class="fas fa-chevron-down"></i></a>
+          </li>
+          <li class="dropdown">
+            <a href="live_scoring.html">Live Scoring <i class="fas fa-chevron-down"></i></a>
+          </li>
+          <li class="dropdown">
+            <a href="cointoss.html">Coin Toss <i class="fas fa-chevron-down"></i></a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <a href="#" class="login-btn">
+          Log In <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- QR Code, Timer & Booking Details Section -->
+  <section class="qr-player-section">
+    <div class="container">
+      <div class="qr-player-content">
+        <!-- QR Code Box -->
+        <div class="qr-code">
+          <img
+            src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true"
+            alt="QR Code"
+          />
+          <small class="qr-text">Scan to access player profile</small>
+          <a href="after_scan.html" class="qr-btn">QR Code</a>
         </div>
-    </header>
 
-    <main>
-        <section class="hero-section">
-            <div class="container">
-                <div class="qr-scanner-container">
-                    <div class="qr-box">
-                        <div class="qr-placeholder">
-                            <i data-lucide="qr-code" size="64"></i>
-                        </div>
-                    </div>
-                    <h2 class="section-title text-center">Scan to access player profile</h2>
-                    <div class="action-buttons">
-                        <a href="occupancy.html" class="btn btn-primary">Check Occupancy</a>
-                        <a href="playersearch.html" class="btn btn-secondary">Find Players</a>
-                    </div>
-                </div>
+        <!-- Timer & Booking Details -->
+        <div class="booking-timer">
+          <div class="timer-container">
+            <h3>Time Remaining</h3>
+            <div class="timer" id="countdown-timer">
+              <span id="hours">00</span>:
+              <span id="minutes">00</span>:
+              <span id="seconds">00</span>
             </div>
-        </section>
-
-        <section class="features-section">
-            <div class="container">
-                <h2 class="section-title text-center">Our Features</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i data-lucide="clock" size="48"></i>
-                        </div>
-                        <h3 class="feature-title">Real-time Occupancy</h3>
-                        <p class="feature-description">Track facility usage and manage capacity in real-time.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i data-lucide="search" size="48"></i>
-                        </div>
-                        <h3 class="feature-title">Advanced Player Search</h3>
-                        <p class="feature-description">Find players based on skills, position, and performance metrics.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i data-lucide="calendar" size="48"></i>
-                        </div>
-                        <h3 class="feature-title">Smart Booking System</h3>
-                        <p class="feature-description">Seamless facility and equipment reservation system.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i data-lucide="bar-chart-2" size="48"></i>
-                        </div>
-                        <h3 class="feature-title">Performance Analytics</h3>
-                        <p class="feature-description">Comprehensive data analysis for player development.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonials-section">
-            <div class="container">
-                <h2 class="section-title text-center">What Our Users Say</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="testimonial-avatar">
-                            <img src="/placeholder.svg?height=60&width=60" alt="User Avatar">
-                        </div>
-                        <div class="testimonial-content">
-                            <h3 class="user-name">User Name</h3>
-                            <p class="user-role">Student</p>
-                            <p class="testimonial-text">"SportsBook has completely transformed how we manage our sports facilities. The real-time occupancy feature is a game-changer!"</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-avatar">
-                            <img src="/placeholder.svg?height=60&width=60" alt="User Avatar">
-                        </div>
-                        <div class="testimonial-content">
-                            <h3 class="user-name">User Name</h3>
-                            <p class="user-role">Student</p>
-                            <p class="testimonial-text">"SportsBook has completely transformed how we manage our sports facilities. The real-time occupancy feature is a game-changer!"</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-avatar">
-                            <img src="/placeholder.svg?height=60&width=60" alt="User Avatar">
-                        </div>
-                        <div class="testimonial-content">
-                            <h3 class="user-name">User Name</h3>
-                            <p class="user-role">Student</p>
-                            <p class="testimonial-text">"SportsBook has completely transformed how we manage our sports facilities. The real-time occupancy feature is a game-changer!"</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3 class="footer-title">Platform</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Scan</a></li>
-                        <li><a href="#">Sports</a></li>
-                        <li><a href="#">Leaderboard</a></li>
-                        <li><a href="#">Live Scoring</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3 class="footer-title">Features</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Occupancy</a></li>
-                        <li><a href="#">Player Search</a></li>
-                        <li><a href="#">Booking</a></li>
-                        <li><a href="#">Others</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3 class="footer-title">Resources</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">Tutorials</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3 class="footer-title">Company</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 SportsBook | Made with ❤️ by the SportsBook Team</p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Contact Us</a>
-                </div>
-            </div>
+          </div>
+          <div class="booking-info">
+            <h4>Booking Details</h4>
+            <p>
+              <strong>Venue:</strong>
+              <span id="venue">Basketball Court</span>
+            </p>
+            <p>
+              <strong>Date:</strong>
+              <span id="booking-date">March 15, 2025</span>
+            </p>
+            <p>
+              <strong>Time Slot:</strong>
+              <span id="time-slot">6:30 PM - 8:00 PM</span>
+            </p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-    </script>
+  <!-- Features Section -->
+  <section class="cards-section">
+    <div class="container">
+      <h2 class="section-title">Our Features</h2>
+      <div class="cards-grid">
+        <!-- Feature Card 1 -->
+        <div class="card">
+          <a href="occupancy.html">
+            <div class="card-image">
+              <img
+                src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true"
+                alt="Feature 1"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Real time Occupancy</h3>
+              <p>Check Real-Time Occupancies in your College</p>
+            </div>
+          </a>
+        </div>
+        <!-- Feature Card 2 -->
+        <div class="card">
+          <a href="playersearch.html">
+            <div class="card-image">
+              <img
+                src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true"
+                alt="Feature 2"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Advanced Player Search</h3>
+              <p>Find Players Based on Skills, Position, and Performance Metrics.</p>
+            </div>
+          </a>
+        </div>
+        <!-- Feature Card 3 -->
+        <div class="card">
+          <a href="bookingsystem.html">
+            <div class="card-image">
+              <img
+                src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true"
+                alt="Feature 3"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Smart Booking System</h3>
+              <p>Seamless Facility and Equipment Reservation System.</p>
+            </div>
+          </a>
+        </div>
+        <!-- Feature Card 4 -->
+        <div class="card">
+          <a href="others.html">
+            <div class="card-image">
+              <img
+                src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true"
+                alt="Feature 4"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Community and Feedback</h3>
+              <p>Join Community Spaces and Give Feedback on Players and Sport Equipment.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title">What Our Users Say</h2>
+      <div class="testimonials-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <img src="https://via.placeholder.com/40" alt="Profile" class="testimonial-profile" />
+            <h4>User Name</h4>
+          </div>
+          <p>
+            “I have completely transformed how we manage our sports facilities.
+            The real-time occupancy feature is a game-changer!”
+          </p>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <img src="https://via.placeholder.com/40" alt="Profile" class="testimonial-profile" />
+            <h4>User Name</h4>
+          </div>
+          <p>
+            “SportsBook made booking so easy and efficient. I can see exactly when my favorite court is available!”
+          </p>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <img src="https://via.placeholder.com/40" alt="Profile" class="testimonial-profile" />
+            <h4>User Name</h4>
+          </div>
+          <p>
+            “The advanced player search and performance analytics are amazing for improving my game!”
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-separator"></div>
+    <div class="footer-content">
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="#">Scan</a></li>
+            <li><a href="#">Sports</a></li>
+            <li><a href="#">Leaderboard</a></li>
+            <li><a href="#">Live Scoring</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Features</h4>
+          <ul>
+            <li><a href="#">Occupancy</a></li>
+            <li><a href="#">Player Search</a></li>
+            <li><a href="#">Booking</a></li>
+            <li><a href="#">Others</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; Developed by Kirat, Priyansh, and Avnish</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/kirat.g09/?utm_source=qr"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Scripts -->
+  <script src="popup.js"></script>
+  <script src="timer.js"></script>
+  <script>
+    // Mobile Menu Toggle
+    const menuIcon = document.querySelector('.menu-icon');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+
+    menuIcon.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+    });
+
+    mobileMenuClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+  </script>
 </body>
 </html>
