@@ -4,34 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sports Platform</title>
-  <!-- Styles & FontAwesome -->
-  <link rel="stylesheet" href="styles.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
+  <!-- Load shared styles -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-  <!-- Mobile Menu (Hidden by default) -->
+  <!-- Mobile Menu -->
   <nav class="mobile-menu">
     <div class="mobile-menu-content">
       <ul>
         <li>
           <span>Platform</span>
           <ul>
-            <li><a href="#">Scan</a></li>
-            <li><a href="#">Sports</a></li>
+            <li><a href="index.html">Scan</a></li>
+            <li><a href="index.html">Sports</a></li>
             <li><a href="#">Leaderboard</a></li>
-            <li><a href="#">Live Scoring</a></li>
+            <li>
+              <a href="live_scoring.html">Live Scoring</a>
+              <ul>
+                <li><a href="cointoss.html">Coin Toss</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li>
           <span>Features</span>
           <ul>
-            <li><a href="#">Occupancy</a></li>
-            <li><a href="#">Player Search</a></li>
-            <li><a href="#">Booking</a></li>
-            <li><a href="#">Others</a></li>
+            <li><a href="occupancy.html">Occupancy</a></li>
+            <li><a href="playersearch.html">Player Search</a></li>
+            <li><a href="bookingsystem.html">Booking</a></li>
+            <li><a href="others.html">Others</a></li>
           </ul>
         </li>
         <li>
@@ -57,54 +60,34 @@
     </div>
   </nav>
 
-  <!-- Header Section -->
+  <!-- Header -->
   <header>
     <div class="header-content container">
       <!-- Hamburger Menu Icon -->
       <div class="menu-icon">
         <i class="fas fa-bars"></i>
       </div>
+      <!-- Logo -->
       <div class="logo">
         <a href="index.html" class="logo-link">
-          <img
-            src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true"
-            alt="SportsBook Logo"
-            class="header-logo"
-          />
+          <img src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true" alt="SportsBook Logo" class="header-logo" />
           <span class="logo-text">SportsBook</span>
         </a>
       </div>
-      <nav class="main-nav">
-        <ul>
-          <li class="dropdown">
-            <a href="#">Sports <i class="fas fa-chevron-down"></i></a>
-          </li>
-          <li class="dropdown">
-            <a href="live_scoring.html">Live Scoring <i class="fas fa-chevron-down"></i></a>
-          </li>
-          <li class="dropdown">
-            <a href="cointoss.html">Coin Toss <i class="fas fa-chevron-down"></i></a>
-          </li>
-        </ul>
-      </nav>
+      <!-- Removed main navigation to simplify header -->
       <div class="header-right">
-        <a href="#" class="login-btn">
-          Log In <i class="fas fa-chevron-down"></i>
-        </a>
+        <a href="#" class="login-btn">Log In <i class="fas fa-chevron-down"></i></a>
       </div>
     </div>
   </header>
 
-  <!-- QR Code, Timer & Booking Details Section -->
+  <!-- Main Content -->
   <section class="qr-player-section">
     <div class="container">
       <div class="qr-player-content">
         <!-- QR Code Box -->
         <div class="qr-code">
-          <img
-            src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true"
-            alt="QR Code"
-          />
+          <img src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true" alt="QR Code" />
           <small class="qr-text">Scan to access player profile</small>
           <a href="after_scan.html" class="qr-btn">QR Code</a>
         </div>
@@ -114,25 +97,14 @@
           <div class="timer-container">
             <h3>Time Remaining</h3>
             <div class="timer" id="countdown-timer">
-              <span id="hours">00</span>:
-              <span id="minutes">00</span>:
-              <span id="seconds">00</span>
+              <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
             </div>
           </div>
           <div class="booking-info">
             <h4>Booking Details</h4>
-            <p>
-              <strong>Venue:</strong>
-              <span id="venue">Basketball Court</span>
-            </p>
-            <p>
-              <strong>Date:</strong>
-              <span id="booking-date">March 15, 2025</span>
-            </p>
-            <p>
-              <strong>Time Slot:</strong>
-              <span id="time-slot">6:30 PM - 8:00 PM</span>
-            </p>
+            <p><strong>Venue:</strong> <span id="venue">Basketball Court</span></p>
+            <p><strong>Date:</strong> <span id="booking-date">March 15, 2025</span></p>
+            <p><strong>Time Slot:</strong> <span id="time-slot">6:30 PM - 8:00 PM</span></p>
           </div>
         </div>
       </div>
@@ -148,13 +120,10 @@
         <div class="card">
           <a href="occupancy.html">
             <div class="card-image">
-              <img
-                src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true"
-                alt="Feature 1"
-              />
+              <img src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true" alt="Feature 1" />
             </div>
             <div class="card-content">
-              <h3>Real time Occupancy</h3>
+              <h3>Real-time Occupancy</h3>
               <p>Check Real-Time Occupancies in your College</p>
             </div>
           </a>
@@ -163,10 +132,7 @@
         <div class="card">
           <a href="playersearch.html">
             <div class="card-image">
-              <img
-                src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true"
-                alt="Feature 2"
-              />
+              <img src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true" alt="Feature 2" />
             </div>
             <div class="card-content">
               <h3>Advanced Player Search</h3>
@@ -178,10 +144,7 @@
         <div class="card">
           <a href="bookingsystem.html">
             <div class="card-image">
-              <img
-                src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true"
-                alt="Feature 3"
-              />
+              <img src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true" alt="Feature 3" />
             </div>
             <div class="card-content">
               <h3>Smart Booking System</h3>
@@ -193,10 +156,7 @@
         <div class="card">
           <a href="others.html">
             <div class="card-image">
-              <img
-                src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true"
-                alt="Feature 4"
-              />
+              <img src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true" alt="Feature 4" />
             </div>
             <div class="card-content">
               <h3>Community and Feedback</h3>
@@ -219,10 +179,7 @@
             <img src="https://via.placeholder.com/40" alt="Profile" class="testimonial-profile" />
             <h4>User Name</h4>
           </div>
-          <p>
-            “I have completely transformed how we manage our sports facilities.
-            The real-time occupancy feature is a game-changer!”
-          </p>
+          <p>“I have completely transformed how we manage our sports facilities. The real-time occupancy feature is a game-changer!”</p>
         </div>
         <!-- Testimonial 2 -->
         <div class="testimonial-card">
@@ -230,9 +187,7 @@
             <img src="https://via.placeholder.com/40" alt="Profile" class="testimonial-profile" />
             <h4>User Name</h4>
           </div>
-          <p>
-            “SportsBook made booking so easy and efficient. I can see exactly when my favorite court is available!”
-          </p>
+          <p>“SportsBook made booking so easy and efficient. I can see exactly when my favorite court is available!”</p>
         </div>
         <!-- Testimonial 3 -->
         <div class="testimonial-card">
@@ -240,9 +195,7 @@
             <img src="https://via.placeholder.com/40" alt="Profile" class="testimonial-profile" />
             <h4>User Name</h4>
           </div>
-          <p>
-            “The advanced player search and performance analytics are amazing for improving my game!”
-          </p>
+          <p>“The advanced player search and performance analytics are amazing for improving my game!”</p>
         </div>
       </div>
     </div>
@@ -259,16 +212,16 @@
             <li><a href="#">Scan</a></li>
             <li><a href="#">Sports</a></li>
             <li><a href="#">Leaderboard</a></li>
-            <li><a href="#">Live Scoring</a></li>
+            <li><a href="live_scoring.html">Live Scoring</a></li>
           </ul>
         </div>
         <div class="footer-column">
           <h4>Features</h4>
           <ul>
-            <li><a href="#">Occupancy</a></li>
-            <li><a href="#">Player Search</a></li>
-            <li><a href="#">Booking</a></li>
-            <li><a href="#">Others</a></li>
+            <li><a href="occupancy.html">Occupancy</a></li>
+            <li><a href="playersearch.html">Player Search</a></li>
+            <li><a href="bookingsystem.html">Booking</a></li>
+            <li><a href="others.html">Others</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -296,15 +249,12 @@
       <div class="social-links">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com/kirat.g09/?utm_source=qr"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
         <a href="#"><i class="fab fa-youtube"></i></a>
       </div>
     </div>
   </footer>
 
-  <!-- JS Scripts -->
-  <script src="popup.js"></script>
-  <script src="timer.js"></script>
   <script>
     // Mobile Menu Toggle
     const menuIcon = document.querySelector('.menu-icon');

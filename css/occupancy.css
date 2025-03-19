@@ -1,0 +1,385 @@
+
+/* ==================================================
+   Occupancy Page Specific Styles
+   (Tabs, Occupancy Card, Court Visualization,
+    Time Table, Data Analysis, Charts, etc.)
+================================================== */
+
+/* Main Container */
+.main-container {
+    padding: 40px 0;
+  }
+  
+  /* Page Title */
+  .page-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #fff;
+  }
+  
+  /* Tabs */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .tab-button {
+    padding: 10px 20px;
+    background-color: #27303f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+  }
+  
+  .tab-button:hover {
+    background-color: #1f2a38;
+  }
+  
+  .tab-button.active {
+    background-color: var(--accent-color);
+    color: #0c1422;
+  }
+  
+  /* Tab Content */
+  .tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease forwards;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Occupancy Display */
+  .occupancy-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  
+  /* Occupancy Card */
+  .occupancy-card {
+    background-color: #27303f;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: #fff;
+  }
+  
+  .occupancy-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #444;
+  }
+  
+  .occupancy-header h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: var(--accent-color);
+  }
+  
+  .status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .status-badge.available {
+    background-color: #28a745;
+  }
+  
+  .status-badge.busy {
+    background-color: #ffc107;
+    color: #333;
+  }
+  
+  .status-badge.full {
+    background-color: #dc3545;
+  }
+  
+  /* Occupancy Details */
+  .occupancy-details {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .detail-item {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 200px;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .detail-item i {
+    font-size: 24px;
+    color: var(--accent-color);
+    margin-right: 15px;
+  }
+  
+  .detail-info .detail-label {
+    font-size: 14px;
+    color: #cccccc;
+  }
+  
+  .detail-info .detail-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  /* Equipment List */
+  .equipment-list {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 15px;
+  }
+  
+  .equipment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #444;
+  }
+  
+  .equipment-item:last-child {
+    border-bottom: none;
+  }
+  
+  .equipment-name {
+    color: #cccccc;
+  }
+  
+  .equipment-count {
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  /* Court Visualization */
+  .court-visualization {
+    background-color: #27303f;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    color: #fff;
+    text-align: center;
+  }
+  
+  .court-visualization h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+  
+  .court-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .court {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .badminton-court {
+    background-color: #3a3a3a;
+    background-image: linear-gradient(to right, transparent 49%, #444 49%, #444 51%, transparent 51%),
+                      linear-gradient(to bottom, transparent 20%, #444 20%, #444 21%, transparent 21%),
+                      linear-gradient(to bottom, transparent 79%, #444 79%, #444 80%, transparent 80%);
+    border: 2px solid #555;
+  }
+  
+  .court-player {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Time Table */
+  .timetable-container {
+    background-color: #27303f;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    margin: 20px auto;
+    color: #fff;
+    overflow-x: auto;
+  }
+  
+  .timetable-header {
+    display: flex;
+    background-color: #333;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .time-column, .day-column {
+    padding: 10px;
+    border-right: 1px solid #444;
+    text-align: center;
+  }
+  
+  .time-column:last-child, .day-column:last-child {
+    border-right: none;
+  }
+  
+  .timetable-body {
+    background-color: #2a2a2a;
+  }
+  
+  .time-row {
+    display: flex;
+    border-bottom: 1px solid #444;
+  }
+  
+  .time-row:last-child {
+    border-bottom: none;
+  }
+  
+  /* Legend */
+  .timetable-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
+  
+  .legend-color.faculty {
+    background-color: rgba(255, 193, 7, 0.2);
+    border: 1px solid #ffc107;
+  }
+  
+  .legend-color.team {
+    background-color: rgba(40, 167, 69, 0.2);
+    border: 1px solid #28a745;
+  }
+  
+  .legend-color.girls {
+    background-color: rgba(220, 53, 69, 0.2);
+    border: 1px solid #dc3545;
+  }
+  
+  .legend-color.mtech {
+    background-color: rgba(111, 66, 193, 0.2);
+    border: 1px solid #6f42c1;
+  }
+  
+  .legend-color.open {
+    background-color: rgba(23, 162, 184, 0.2);
+    border: 1px solid #17a2b8;
+  }
+  
+  .legend-text {
+    color: #cccccc;
+  }
+  
+  /* Data Analysis */
+  .analysis-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .chart-container {
+    background-color: #27303f;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    color: #fff;
+    text-align: center;
+  }
+  
+  .chart-container h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+  
+  .stats-container {
+    background-color: #27303f;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1020px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    color: #fff;
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .stat-card {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .stat-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+  }
+  
+  .stat-label {
+    color: #cccccc;
+    font-size: 14px;
+  }
+  

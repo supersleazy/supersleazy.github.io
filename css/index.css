@@ -1,0 +1,229 @@
+/* =====================================
+   Index Page Specific Styles
+   (QR, Timer, Features, Testimonials)
+====================================== */
+
+/* -------------------------------------
+   QR Code, Timer & Booking Details Section
+------------------------------------- */
+.qr-player-section {
+  background-color: transparent;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.qr-player-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.qr-code {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-code img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 8px;
+}
+
+.qr-text {
+  font-size: 0.85rem;
+  color: #cccccc;
+  margin-bottom: 8px;
+}
+
+.qr-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #192a45;
+  color: #fff;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.qr-btn:hover {
+  background-color: #1f345a;
+}
+
+.booking-timer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  background-color: #192a45;
+  border-radius: 8px;
+  border: 1px solid #2b3d5c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.timer-container {
+  text-align: center;
+  min-width: 180px;
+}
+
+.timer-container h3 {
+  margin-bottom: 10px;
+  color: var(--accent-color);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.timer {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  font-family: monospace;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #0c1422;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  margin-bottom: 5px;
+}
+
+.booking-info {
+  border-left: 1px solid #2b3d5c;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.booking-info h4 {
+  margin-bottom: 15px;
+  color: var(--accent-color);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.booking-info p {
+  margin: 10px 0;
+  color: #cccccc;
+  font-size: 14px;
+}
+
+.booking-info p strong {
+  color: #fff;
+}
+
+/* -------------------------------------
+   Features Section (Cards)
+------------------------------------- */
+.cards-section {
+  padding: 60px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background-color: #27303f;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-image {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+}
+
+.card-image img {
+  max-width: 80px;
+  max-height: 80px;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.card-content p {
+  color: #cfcfcf;
+  font-size: 0.95rem;
+}
+
+/* -------------------------------------
+   Testimonials Section
+------------------------------------- */
+.testimonials-section {
+  padding: 60px 0;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background-color: #192a45;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.testimonial-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.testimonial-card h4 {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.testimonial-card p {
+  color: #cfcfcf;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
