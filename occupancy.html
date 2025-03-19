@@ -68,19 +68,21 @@
   <!-- Header -->
   <header>
     <div class="header-content container">
-      <!-- Hamburger Menu Icon -->
-      <div class="menu-icon" id="menuIcon">
-        <i class="fas fa-bars"></i>
+      <!-- Logo and Menu Toggle (Menu appears just below logo on mobile) -->
+      <div class="header-left">
+        <div class="logo">
+          <a href="index.html" class="logo-link">
+            <img src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true" alt="SportsBook Logo" class="header-logo" />
+            <span class="logo-text">SportsBook</span>
+          </a>
+        </div>
+        <!-- Hamburger Menu Icon placed just below the logo on mobile -->
+        <div class="menu-icon" id="menuIcon">
+          <i class="fas fa-bars"></i>
+        </div>
       </div>
-      <div class="logo">
-        <a href="index.html" class="logo-link">
-          <img src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true" alt="SportsBook Logo" class="header-logo" />
-          <span class="logo-text">SportsBook</span>
-        </a>
-      </div>
-      <!-- Simplified navigation for mobile -->
       <div class="header-right">
-        <a href="#" class="login-btn">Log in <i class="fas fa-chevron-down"></i></a>
+        <a href="#" class="login-btn">Log in</a>
       </div>
     </div>
   </header>
@@ -137,7 +139,7 @@
           </div>
           <h3>Equipment in Use</h3>
           <div class="equipment-list" id="equipmentList">
-            <!-- Equipment items updated by JS -->
+            <!-- Dynamically updated -->
           </div>
         </div>
 
@@ -145,7 +147,7 @@
         <div class="court-visualization">
           <h3>Court Visualization</h3>
           <div class="court-container" id="courtContainer">
-            <!-- Updated dynamically with proper pitch markings -->
+            <!-- Dynamically updated with pitch markings -->
           </div>
         </div>
       </div>
@@ -181,7 +183,7 @@
             <div class="day-column">Sunday</div>
           </div>
           <div class="timetable-body" id="timetableBody">
-            <!-- Time rows with original color-coded slots -->
+            <!-- Example time rows with original color-coded slots -->
             <div class="time-row">
               <div class="time-column">06:00 - 08:00</div>
               <div class="day-column faculty">Faculty</div>
@@ -438,7 +440,7 @@
       }
     }
 
-    // Full sportsData object with court markings
+    // Sports Data with Court Markings
     const sportsData = {
       badminton: {
         title: 'Badminton',
@@ -758,7 +760,6 @@
       const sportSelect = document.getElementById('analysisSportSelect');
       const selectedSport = sportSelect.value;
 
-      // Random data for demo purposes
       const weeklyData = Array.from({ length: 7 }, () => Math.floor(Math.random() * 30) + 10);
       weeklyChart.data.datasets[0].data = weeklyData;
       weeklyChart.update();
