@@ -16,7 +16,7 @@
   <!-- Sidebar (Collapsible) – same as in other pages -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <h2 style="color:#0782da">Menu</h2>
+      <h2 style="color: var(--accent-color)">Menu</h2>
       <button class="sidebar-close" id="sidebarClose">
         <i class="fas fa-times"></i>
       </button>
@@ -24,7 +24,7 @@
     <nav class="sidebar-nav">
       <ul>
         <li class="menu-parent">
-          <span class="menu-title" style="color:#0782da">Platform</span>
+          <span class="menu-title" style="color: var(--accent-color)">Platform</span>
           <ul class="submenu">
             <li><a href="index.html">Scan</a></li>
             <li><a href="index.html">Sports</a></li>
@@ -33,7 +33,7 @@
           </ul>
         </li>
         <li class="menu-parent">
-          <span class="menu-title" style="color:#0782da">Features</span>
+          <span class="menu-title" style="color: var(--accent-color)">Features</span>
           <ul class="submenu">
             <li><a href="occupancy.html">Occupancy</a></li>
             <li><a href="playersearch.html">Player Search</a></li>
@@ -49,7 +49,7 @@
   <!-- HEADER -->
   <header>
     <div class="header-content">
-      <!-- Menu Button (absolute positioned at extreme left) -->
+      <!-- Menu Button (flush left) -->
       <div class="menu-btn" id="menuBtn">Menu</div>
       <!-- Centered Logo & Text -->
       <div class="header-center">
@@ -58,7 +58,7 @@
           <span class="logo-text">SportsBook</span>
         </a>
       </div>
-      <!-- Login Button (absolute positioned at extreme right) -->
+      <!-- Login Button (flush right) -->
       <div class="header-right">
         <a href="#" class="login-btn">Log In</a>
       </div>
@@ -195,7 +195,6 @@
   <!-- JAVASCRIPT -->
   <script>
     // Toggle Assistance Sections
-    document.getElementById('submitFeedbackBtn').style.display = 'none';
     function showAssistance(section) {
       document.getElementById('joinCommunityBtn')?.classList.remove('active');
       document.getElementById('feedbackBtn')?.classList.remove('active');
@@ -224,11 +223,10 @@
         alert('Please select a feedback type.');
         return;
       }
-      // (Simple alert for demo purposes)
       alert('Feedback submitted.');
     }
     
-    // Sidebar Toggle (same as other pages)
+    // Sidebar Toggle
     const menuBtn = document.getElementById('menuBtn');
     const sidebar = document.getElementById('sidebar');
     const sidebarClose = document.getElementById('sidebarClose');
