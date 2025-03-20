@@ -1,185 +1,187 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Coin Toss | SportsBook</title>
-    <!-- Shared CSS for overall theme -->
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/occupancy.css" />
-    <!-- Page-specific CSS for Coin Toss -->
-    <link rel="stylesheet" href="css/cointoss.css" />
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  </head>
-  <body>
-    <!-- Sidebar (Collapsible) – same as other pages -->
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-        <h2 style="color:#0782da">Menu</h2>
-        <button class="sidebar-close" id="sidebarClose">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <nav class="sidebar-nav">
-        <ul>
-          <li class="menu-parent">
-            <span class="menu-title" style="color:#0782da">Platform</span>
-            <ul class="submenu">
-              <li><a href="index.html">Scan</a></li>
-              <li><a href="index.html">Sports</a></li>
-              <li><a href="#">Leaderboard</a></li>
-              <li><a href="live_scoring.html">Live Scoring</a></li>
-            </ul>
-          </li>
-          <li class="menu-parent">
-            <span class="menu-title" style="color:#0782da">Features</span>
-            <ul class="submenu">
-              <li><a href="occupancy.html">Occupancy</a></li>
-              <li><a href="playersearch.html">Player Search</a></li>
-              <li><a href="bookingsystem.html">Booking</a></li>
-              <li><a href="cointoss.html">Coin Toss</a></li>
-              <li><a href="others.html">Others</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </aside>
-
-    <!-- HEADER -->
-    <header>
-      <div class="header-content">
-        <!-- Menu Button (absolute positioned at extreme left) -->
-        <div class="menu-btn" id="menuBtn">Menu</div>
-        <!-- Centered Logo & Text -->
-        <div class="header-center">
-          <a href="index.html" class="logo-link">
-            <img src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true" alt="SportsBook Logo" class="header-logo" />
-            <span class="logo-text">SportsBook</span>
-          </a>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Coin Toss | SportsBook</title>
+      <!-- Shared CSS for overall theme -->
+      <link rel="stylesheet" href="css/base.css" />
+      <link rel="stylesheet" href="css/occupancy.css" />
+      <!-- Page-specific CSS for Coin Toss -->
+      <link rel="stylesheet" href="css/cointoss.css" />
+      <!-- Font Awesome for icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    </head>
+    <body>
+      <!-- Sidebar (Collapsible) – same as other pages -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <h2 style="color:#0782da">Menu</h2>
+          <button class="sidebar-close" id="sidebarClose">
+            <i class="fas fa-times"></i>
+          </button>
         </div>
-        <!-- Login Button (absolute positioned at extreme right) -->
-        <div class="header-right">
-          <a href="#" class="login-btn">Log in</a>
-        </div>
-      </div>
-    </header>
+        <nav class="sidebar-nav">
+          <ul>
+            <li class="menu-parent">
+              <span class="menu-title" style="color:#0782da">Platform</span>
+              <ul class="submenu">
+                <li><a href="index.html">Scan</a></li>
+                <li><a href="index.html">Sports</a></li>
+                <li><a href="#">Leaderboard</a></li>
+                <li><a href="live_scoring.html">Live Scoring</a></li>
+              </ul>
+            </li>
+            <li class="menu-parent">
+              <span class="menu-title" style="color:#0782da">Features</span>
+              <ul class="submenu">
+                <li><a href="occupancy.html">Occupancy</a></li>
+                <li><a href="playersearch.html">Player Search</a></li>
+                <li><a href="bookingsystem.html">Booking</a></li>
+                <li><a href="cointoss.html">Coin Toss</a></li>
+                <li><a href="others.html">Others</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
 
-    <!-- Main Content -->
-    <main class="container">
-      <div class="content">
-        <h1 style="margin-top:100px;">Coin Toss Simulator</h1>
-        <p>Click the button below to flip the coin!</p>
-        <div class="coin-toss-container">
-          <div class="coin-container">
-            <div class="coin" id="coin">
-                <div class="coin-face heads">
-                    <img src="coinheads.png" alt="Heads" class="coin-logo">
-                  </div>
-                  <div class="coin-face tails">
-                    <img src="cointails.png" alt="Tails" class="coin-logo">
-                </div>                  
+      <!-- HEADER -->
+      <header>
+        <div class="header-content">
+          <!-- Menu Button (absolute positioned at extreme left) -->
+          <div class="menu-btn" id="menuBtn">Menu</div>
+          <!-- Centered Logo & Text -->
+          <div class="header-center">
+            <a href="index.html" class="logo-link">
+              <img src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true" alt="SportsBook Logo" class="header-logo" />
+              <span class="logo-text">SportsBook</span>
+            </a>
+          </div>
+          <!-- Login Button (absolute positioned at extreme right) -->
+          <div class="header-right">
+            <a href="#" class="login-btn">Log in</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="container">
+        <div class="content">
+          <h1 style="margin-top:100px;">Coin Toss Simulator</h1>
+          <p>Click the button below to flip the coin!</p>
+          <div class="coin-toss-container">
+            <div class="coin-container">
+              <div class="coin" id="coin">
+                  <div class="coin-face heads">
+                      <img src="coinheads.png" alt="Heads" class="coin-logo">
+                    </div>
+                    <div class="coin-face tails">
+                      <img src="cointails.png" alt="Tails" class="coin-logo">
+                  </div>                  
+              </div>
+            </div>
+            <button class="toss-button" id="toss-button">Toss Coin</button>
+            <div class="result" id="result"></div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer (using shared styles) -->
+      <footer>
+        <div class="footer-content">
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Platform</h4>
+              <ul>
+                <li><a href="#">Scan</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Leaderboard</a></li>
+                <li><a href="live_scoring.html">Live Scoring</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Features</h4>
+              <ul>
+                <li><a href="occupancy.html">Occupancy</a></li>
+                <li><a href="playersearch.html">Player Search</a></li>
+                <li><a href="bookingsystem.html">Booking</a></li>
+                <li><a href="others.html">Others</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Tutorials</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">About Us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">Contact</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
             </div>
           </div>
-          <button class="toss-button" id="toss-button">Toss Coin</button>
-          <div class="result" id="result"></div>
         </div>
-      </div>
-    </main>
+        <div class="footer-bottom">
+          <p>&copy; 2025 SportsBook. All rights reserved.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/kirat.g09/?utm_source=qr"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </footer>
 
-    <!-- Footer (using shared styles) -->
-    <footer>
-      <div class="footer-content">
-        <div class="footer-links">
-          <div class="footer-column">
-            <h4>Platform</h4>
-            <ul>
-              <li><a href="#">Scan</a></li>
-              <li><a href="#">Sports</a></li>
-              <li><a href="#">Leaderboard</a></li>
-              <li><a href="live_scoring.html">Live Scoring</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4>Features</h4>
-            <ul>
-              <li><a href="occupancy.html">Occupancy</a></li>
-              <li><a href="playersearch.html">Player Search</a></li>
-              <li><a href="bookingsystem.html">Booking</a></li>
-              <li><a href="others.html">Others</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4>Resources</h4>
-            <ul>
-              <li><a href="#">Help Center</a></li>
-              <li><a href="#">Community</a></li>
-              <li><a href="#">Tutorials</a></li>
-              <li><a href="#">Blog</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">About Us</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">Contact</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 SportsBook. All rights reserved.</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/kirat.g09/?utm_source=qr"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-    </footer>
-
-    <!-- JavaScript: Coin Toss Functionality -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const coin = document.getElementById('coin');
-        const tossButton = document.getElementById('toss-button');
-        const resultDisplay = document.getElementById('result');
-        let isAnimating = false;
-        
-        tossButton.addEventListener('click', function() {
-          if (isAnimating) return;
-          isAnimating = true;
-          resultDisplay.textContent = '';
+      <!-- JavaScript: Coin Toss Functionality -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const coin = document.getElementById('coin');
+          const tossButton = document.getElementById('toss-button');
+          const resultDisplay = document.getElementById('result');
+          let isAnimating = false;
           
-          // Restart animation
-          coin.classList.remove('flipping');
-          void coin.offsetWidth; // Trigger reflow
-          coin.classList.add('flipping');
-          
-          const result = Math.random() < 0.5 ? 'Heads' : 'Tails';
-          setTimeout(() => {
-            // End state rotation based on result (adjust as needed)
-            coin.style.transform = result === 'Heads' ? 'rotateY(1800deg)' : 'rotateY(1980deg)';
-            resultDisplay.textContent = result;
-            isAnimating = false;
-          }, 3000);
+          tossButton.addEventListener('click', function() {
+            if (isAnimating) return;
+            isAnimating = true;
+            resultDisplay.textContent = '';
+            
+            // Restart animation
+            coin.classList.remove('flipping');
+            void coin.offsetWidth; // Trigger reflow
+            coin.classList.add('flipping');
+            
+            const result = Math.random() < 0.5 ? 'Heads' : 'Tails';
+            setTimeout(() => {
+              coin.classList.remove('flipping');  // Remove animation class
+              coin.style.transform = result === 'Heads' 
+                ? 'rotateY(1800deg)' 
+                : 'rotateY(1980deg)';
+              resultDisplay.textContent = result;
+              isAnimating = false;
+            }, 3000);            
+          });
         });
-      });
-    </script>
-    
-    <!-- JavaScript: Sidebar Toggle -->
-    <script>
-      const menuBtn = document.getElementById('menuBtn');
-      const sidebar = document.getElementById('sidebar');
-      const sidebarClose = document.getElementById('sidebarClose');
-      menuBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('expanded');
-      });
-      sidebarClose.addEventListener('click', () => {
-        sidebar.classList.remove('expanded');
-      });
-    </script>
-  </body>
-</html>
+      </script>
+      
+      <!-- JavaScript: Sidebar Toggle -->
+      <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarClose = document.getElementById('sidebarClose');
+        menuBtn.addEventListener('click', () => {
+          sidebar.classList.toggle('expanded');
+        });
+        sidebarClose.addEventListener('click', () => {
+          sidebar.classList.remove('expanded');
+        });
+      </script>
+    </body>
+  </html>
