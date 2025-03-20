@@ -178,18 +178,43 @@
 /* --- Header Adjustments --- */
 /* Ensure the header content container spans the full width and uses space-between */
   
-  /* --- Book Now Button Styling --- */
-  .card-footer .book-btn {
-    padding: 12px 24px;
-    background-color: var(--accent-color) !important;  /* Force blue accent color */
-    color: var(--bg-color);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background 0.3s;
-  }
-  .card-footer .book-btn:hover {
-    background-color: #0f5da1 !important;
-  }
-    
+/* Book Now Button - Ensures Theme Matching */
+.card-bottom .book-btn {
+  padding: 12px 24px;
+  background-color: var(--accent-color) !important;
+  color: white !important;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+  width: 100%;
+  text-align: center;
+}
+
+.card-bottom .book-btn:hover {
+  background-color: #0f5da1 !important;
+}
+
+
+/* Header Container: full width and centered content */
+.header-content {
+  position: relative;          /* Needed for absolute positioning inside */
+  display: flex;
+  justify-content: center;     /* Center the logo */
+  align-items: center;
+  padding: 0 20px;             /* Adjust side padding as needed */
+  width: 100%;
+}
+
+/* Position menu button to the extreme left */
+.menu-btn {
+  position: absolute;
+  left: 20px;                  /* Or 0 if you want no padding */
+}
+
+/* Position login button to the extreme right */
+.header-right {
+  position: absolute;
+  right: 20px;                 /* Or 0 if you want no padding */
+}

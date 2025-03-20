@@ -71,7 +71,7 @@
   .player-card {
     background: var(--playercard-bg);
     padding: 10px;
-    border: 1px solid var(--playercard-border);
+    border: 1px solid var(--#27303f);
     border-radius: 4px;
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;

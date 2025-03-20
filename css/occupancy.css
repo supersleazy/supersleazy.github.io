@@ -447,23 +447,23 @@ header {
 }
 /* Color-coded classes */
 .day-column.faculty {
-  background-color: rgba(255,193,7,0.2);
+  background-color: rgba(255,193,7,0.5);
   color: #ffc107;
 }
 .day-column.team {
-  background-color: rgba(40,167,69,0.2);
+  background-color: rgba(40,167,69,0.5);
   color: #28a745;
 }
 .day-column.girls {
-  background-color: rgba(220,53,69,0.2);
+  background-color: rgba(220,53,69,0.5);
   color: #dc3545;
 }
 .day-column.mtech {
-  background-color: rgba(111,66,193,0.2);
+  background-color: rgba(111,66,193,0.5);
   color: #6f42c1;
 }
 .day-column.open {
-  background-color: rgba(23,162,184,0.2);
+  background-color: rgba(23,162,184,0.5);
   color: #17a2b8;
 }
 .timetable-legend {
@@ -485,7 +485,7 @@ header {
 }
 .legend-color.faculty {
   background-color: rgba(255,193,7,0.2);
-  border: 1px solid #ffc107;
+  border: 1px solid #ffbf00;
 }
 .legend-color.team {
   background-color: rgba(40,167,69,0.2);
