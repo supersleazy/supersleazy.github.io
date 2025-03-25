@@ -8,16 +8,18 @@
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="css/occupancy.css" />
+  <!-- Google Fonts: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <!-- Chart.js if needed -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <!-- Sidebar (Collapsible) - EXACT copy from occupancy.html -->
+  <!-- Sidebar (Collapsible) -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <h2 style="color:#0782da">Menu</h2>
+      <h2 style="color: var(--accent-color);">Menu</h2>
       <button class="sidebar-close" id="sidebarClose">
         <i class="fas fa-times"></i>
       </button>
@@ -25,7 +27,7 @@
     <nav class="sidebar-nav">
       <ul>
         <li class="menu-parent">
-          <span class="menu-title" style="color:#0782da">Platform</span>
+          <span class="menu-title" style="color: var(--accent-color);">Platform</span>
           <ul class="submenu">
             <li><a href="index.html">Scan</a></li>
             <li><a href="index.html">Sports</a></li>
@@ -34,7 +36,7 @@
           </ul>
         </li>
         <li class="menu-parent">
-          <span class="menu-title" style="color:#0782da">Features</span>
+          <span class="menu-title" style="color: var(--accent-color);">Features</span>
           <ul class="submenu">
             <li><a href="occupancy.html">Occupancy</a></li>
             <li><a href="playersearch.html">Player Search</a></li>
@@ -47,11 +49,11 @@
     </nav>
   </aside>
 
-  <!-- HEADER - EXACT copy from occupancy.html -->
-  <header>
+  <!-- HEADER -->
+  <header style="background-color: var(--header-footer-bg);">
     <div class="header-content">
-      <!-- Menu Button (same style as occupancy) -->
-      <div class="menu-btn" id="menuBtn">Menu</div>
+      <!-- Menu Button -->
+      <div class="menu-btn" id="menuBtn">MENU</div>
       <!-- Centered SportsBook Logo & Text -->
       <div class="header-center">
         <a href="index.html" class="logo-link">
@@ -59,9 +61,9 @@
           <span class="logo-text">SportsBook</span>
         </a>
       </div>
-      <!-- Login Button on the Right -->
+      <!-- Login Button -->
       <div class="header-right">
-        <a href="#" class="login-btn">Log in</a>
+        <a href="#" class="login-btn">LOGIN</a>
       </div>
     </div>
   </header>
@@ -72,7 +74,7 @@
     <section class="qr-player-section">
       <div class="container">
         <div class="qr-player-content">
-          <!-- QR Code Box (actual logo) -->
+          <!-- QR Code Box -->
           <div class="qr-code">
             <img 
               src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true"
@@ -106,23 +108,22 @@
         <h2 class="section-title">Our Features</h2>
         <div class="cards-grid">
           <!-- Feature Card 1 -->
-          <div class="card">
+          <div class="card" style="background-color: var(--card-bg);">
             <a href="occupancy.html">
               <div class="card-image">
-                <!-- The logo covers the entire top section -->
                 <img 
                   src="https://github.com/Kirat24303/sportsBook/blob/main/sportsBook_logo.png?raw=true" 
                   alt="Real-time Occupancy"
                 />
               </div>
               <div class="card-content">
-                <h3 style="color:#0782da">Real-time Occupancy</h3>
+                <h3 style="color: var(--accent-color);">Real-Time Occupancy</h3>
                 <p>Check Real-Time Occupancies in your College</p>
               </div>
             </a>
           </div>
           <!-- Feature Card 2 -->
-          <div class="card">
+          <div class="card" style="background-color: var(--card-bg);">
             <a href="playersearch.html">
               <div class="card-image">
                 <img 
@@ -131,13 +132,13 @@
                 />
               </div>
               <div class="card-content">
-                <h3 style="color:#0782da">Advanced Player Search</h3>
+                <h3 style="color: var(--accent-color);">Advanced Player Search</h3>
                 <p>Find Players Based on Skills, Position, and Performance Metrics.</p>
               </div>
             </a>
           </div>
           <!-- Feature Card 3 -->
-          <div class="card">
+          <div class="card" style="background-color: var(--card-bg);">
             <a href="bookingsystem.html">
               <div class="card-image">
                 <img 
@@ -146,13 +147,13 @@
                 />
               </div>
               <div class="card-content">
-                <h3 style="color:#0782da">Smart Booking System</h3>
+                <h3 style="color: var(--accent-color);">Smart Booking System</h3>
                 <p>Seamless Facility and Equipment Reservation System.</p>
               </div>
             </a>
           </div>
           <!-- Feature Card 4 -->
-          <div class="card">
+          <div class="card" style="background-color: var(--card-bg);">
             <a href="others.html">
               <div class="card-image">
                 <img 
@@ -161,7 +162,7 @@
                 />
               </div>
               <div class="card-content">
-                <h3 style="color:#0782da">Community and Feedback</h3>
+                <h3 style="color: var(--accent-color);">Community and Feedback</h3>
                 <p>Join Community Spaces and Give Feedback on Players and Equipment.</p>
               </div>
             </a>
@@ -183,7 +184,7 @@
                 alt="User Profile" 
                 class="testimonial-profile"
               />
-              <h4 style="color:#0782da">User Name</h4>
+              <h4 style="color: var(--accent-color);">User Name</h4>
             </div>
             <p>“SportsBook transformed how we manage our sports facilities. Real-time occupancy is a game-changer!”</p>
           </div>
@@ -195,7 +196,7 @@
                 alt="User Profile" 
                 class="testimonial-profile"
               />
-              <h4 style="color:#0782da">User Name</h4>
+              <h4 style="color: var(--accent-color);">User Name</h4>
             </div>
             <p>“Booking has never been easier. I can check court availability instantly!”</p>
           </div>
@@ -207,7 +208,7 @@
                 alt="User Profile" 
                 class="testimonial-profile"
               />
-              <h4 style="color:#0782da">User Name</h4>
+              <h4 style="color: var(--accent-color);">User Name</h4>
             </div>
             <p>“The player search and analytics have helped me improve my game tremendously.”</p>
           </div>
@@ -217,12 +218,12 @@
   </main>
 
   <!-- FOOTER -->
-  <footer>
+  <footer style="background-color: var(--footer-bg);">
     <div class="footer-separator"></div>
     <div class="footer-content">
       <div class="footer-links">
         <div class="footer-column">
-          <h4 style="color:#0782da">Platform</h4>
+          <h4 style="color: var(--accent-color);">Platform</h4>
           <ul>
             <li><a href="#">Scan</a></li>
             <li><a href="#">Sports</a></li>
@@ -231,7 +232,7 @@
           </ul>
         </div>
         <div class="footer-column">
-          <h4 style="color:#0782da">Features</h4>
+          <h4 style="color: var(--accent-color);">Features</h4>
           <ul>
             <li><a href="occupancy.html">Occupancy</a></li>
             <li><a href="playersearch.html">Player Search</a></li>
@@ -240,7 +241,7 @@
           </ul>
         </div>
         <div class="footer-column">
-          <h4 style="color:#0782da">Resources</h4>
+          <h4 style="color: var(--accent-color);">Resources</h4>
           <ul>
             <li><a href="#">Help Center</a></li>
             <li><a href="#">Community</a></li>
@@ -249,7 +250,7 @@
           </ul>
         </div>
         <div class="footer-column">
-          <h4 style="color:#0782da">Company</h4>
+          <h4 style="color: var(--accent-color);">Company</h4>
           <ul>
             <li><a href="https://www.instagram.com/kirat.g09/?utm_source=qr">About Us</a></li>
             <li><a href="#">Careers</a></li>
@@ -272,7 +273,7 @@
 
   <!-- JS for Sidebar & Timer -->
   <script>
-    // Sidebar Toggle (exact from occupancy)
+    // Sidebar Toggle
     const menuBtn = document.getElementById('menuBtn');
     const sidebar = document.getElementById('sidebar');
     const sidebarClose = document.getElementById('sidebarClose');
@@ -310,5 +311,8 @@
       startCountdown(oneHour, display);
     };
   </script>
+  
+  <!-- Linking popup.js for authentication popup functionality -->
+  <script src="popup.js"></script>
 </body>
 </html>
