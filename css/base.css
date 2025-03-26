@@ -220,7 +220,7 @@ header {
 .menu-btn {
   background-color: #3fadab;
   color: var(--white);
-  padding: 4px 9px;  /* Reduced padding */
+  padding: 1px 2px;  /* Reduced padding */
   border-radius: 2px;
   cursor: pointer;
   transition: background-color 0.2s ease;
