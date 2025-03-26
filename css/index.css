@@ -52,6 +52,7 @@
 
 .booking-timer {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   gap: 20px;
   padding: 20px;
@@ -245,7 +246,7 @@
   }
   .qr-player-content {
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
   }
   .occupancy-details {
     flex-direction: column;
@@ -254,5 +255,18 @@
   .detail-item {
     margin: 0 auto 15px;
     min-width: unset;
+  }
+}
+
+@media (max-width: 768px) {
+  .timer-container {
+    min-width: auto; /* Allow flexibility */
+    width: 100%; /* Make it scale within its container */
+    padding: 10px;
+  }
+
+  .timer {
+    font-size: 1.8rem; /* Reduce the size for mobile */
+    padding: 8px;
   }
 }
