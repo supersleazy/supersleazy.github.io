@@ -1243,10 +1243,6 @@ footer {
 /* ---------- RESPONSIVE ADJUSTMENTS ---------- */
 @media (max-width: 768px) {
   /* Stack header elements vertically */
-  .header-content {
-    flex-direction: column;
-    align-items: center;
-  }
   .menu-btn,
   .login-btn {
     margin: 5px 0;
