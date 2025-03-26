@@ -631,15 +631,15 @@ footer {
   }
   .menu-btn {
     position: absolute;
-    left: 20px;
+    left: 10px;
     top: 10px;
   }
   .header-center {
-    margin-top: 40px;
+    margin-top: 50px;
   }
   .header-right {
     position: absolute;
-    right: 20px;
+    right: 10px;
     top: 10px;
   }
   .occupancy-details {
