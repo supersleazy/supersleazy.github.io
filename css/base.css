@@ -210,6 +210,8 @@ header {
 }
 
 .header-content {
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1167,6 +1169,8 @@ header {
 }
 
 .header-content {
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
