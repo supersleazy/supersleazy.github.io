@@ -239,7 +239,9 @@ header {
   }
 }
 
-.logo {
+/* Group logo image and text */
+.logo,
+.logo-link {
   display: flex;
   align-items: center;
 }
@@ -913,9 +915,8 @@ footer {
   color: white;
 }
 
-
 .menu-btn {
-  background-color:#3fadab;
+  background-color: #3fadab;
   color: var(--white);
   padding: 10px 20px;
   border-radius: 4px;
@@ -928,7 +929,7 @@ footer {
 }
 
 .login-btn {
-  background-color:#3fadab;
+  background-color: #3fadab;
   color: white;
   padding: 10px 20px;
   border-radius: 4px;
@@ -939,5 +940,5 @@ footer {
 
 .login-btn:hover {
   background-color: #1f6767;
-  color: white
+  color: white;
 }

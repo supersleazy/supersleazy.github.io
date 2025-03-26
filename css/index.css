@@ -227,22 +227,22 @@
 ===================================== */
 @media (max-width: 768px) {
   .header-content {
-    flex-wrap: wrap;
-    justify-content: center;
-    position: relative;
+    flex-wrap: nowrap;         /* Prevent wrapping */
+    justify-content: space-between;
+    padding: 0 20px;           /* Reduce side padding for better fit */
   }
   .menu-btn {
-    position: absolute;
-    left: 20px;
-    top: 10px;
+    position: relative;        /* Remove absolute positioning */
+    left: 0;
+    top: 0;
   }
   .header-center {
-    margin-top: 40px;
+    margin-top: 0;             /* Remove extra top margin */
   }
   .header-right {
-    position: absolute;
-    right: 20px;
-    top: 10px;
+    position: relative;        /* Remove absolute positioning */
+    right: 0;
+    top: 0;
   }
   .qr-player-content {
     flex-direction: column;
@@ -256,15 +256,11 @@
     margin: 0 auto 15px;
     min-width: unset;
   }
-}
-
-@media (max-width: 768px) {
   .timer-container {
     min-width: auto; /* Allow flexibility */
-    width: 100%; /* Make it scale within its container */
+    width: 100%;     /* Make it scale within its container */
     padding: 10px;
   }
-
   .timer {
     font-size: 1.8rem; /* Reduce the size for mobile */
     padding: 8px;
