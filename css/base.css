@@ -220,8 +220,8 @@ header {
 .menu-btn {
   background-color: #3fadab;
   color: var(--white);
-  padding: 8px 15px;  /* Reduced padding */
-  border-radius: 4px;
+  padding: 4px 9px;  /* Reduced padding */
+  border-radius: 2px;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
@@ -233,8 +233,8 @@ header {
 .login-btn {
   background-color: #3fadab;
   color: white;
-  padding: 8px 15px;  /* Reduced padding */
-  border-radius: 4px;
+  padding: 4px 9px;  /* Reduced padding */
+  border-radius: 2px;
   display: flex;
   align-items: center;
   transition: background-color 0.2s ease;

@@ -640,7 +640,7 @@ footer {
   .header-right {
     position: absolute;
     right: 10px;
-    top: 10px;
+    top: 20px;
   }
   .occupancy-details {
     flex-direction: column;
